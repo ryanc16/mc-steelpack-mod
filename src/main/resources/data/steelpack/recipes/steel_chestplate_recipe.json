@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "steel",
+  "category": "equipment",
+  "pattern": [
+    "0 2",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "steelpack:steel_ingot"
+    },
+    "2": {
+      "item": "steelpack:steel_ingot"
+    },
+    "3": {
+      "item": "steelpack:steel_ingot"
+    },
+    "4": {
+      "item": "steelpack:steel_ingot"
+    },
+    "5": {
+      "item": "steelpack:steel_ingot"
+    },
+    "6": {
+      "item": "steelpack:steel_ingot"
+    },
+    "7": {
+      "item": "steelpack:steel_ingot"
+    },
+    "8": {
+      "item": "steelpack:steel_ingot"
+    }
+  },
+  "result": {
+    "item": "steelpack:steel_armor_chestplate",
+    "count": 1
+  }
+}
