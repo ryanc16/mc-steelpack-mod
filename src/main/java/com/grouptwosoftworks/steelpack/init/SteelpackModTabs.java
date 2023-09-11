@@ -23,7 +23,7 @@ public class SteelpackModTabs {
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
 
 		if (tabData.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-			tabData.accept(SteelpackModItems.STEEL_BLOCK.get());
+			tabData.accept(SteelpackModBlocks.STEEL_BLOCK.get().asItem());
 		}
 
 		if (tabData.getTabKey() == CreativeModeTabs.COMBAT) {

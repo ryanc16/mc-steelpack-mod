@@ -40,6 +40,7 @@ import java.util.AbstractMap;
 
 import com.grouptwosoftworks.steelpack.init.SteelpackModTabs;
 import com.grouptwosoftworks.steelpack.init.SteelpackModItems;
+import com.grouptwosoftworks.steelpack.init.SteelpackModBlocks;
 
 @Mod("steelpack")
 public class SteelpackMod {
@@ -49,6 +50,8 @@ public class SteelpackMod {
 	public SteelpackMod() {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
+		SteelpackModBlocks.REGISTRY.register(bus);
 
 		SteelpackModItems.REGISTRY.register(bus);
 

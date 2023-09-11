@@ -232,20 +232,6 @@
       }
     },
     {
-      "name": "SteelBlock",
-      "type": "item",
-      "sortid": 20,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "steel_block",
-      "metadata": {
-        "files": [
-          "src/main/java/com/grouptwosoftworks/steelpack/item/SteelBlockItem.java",
-          "src/main/resources/assets/steelpack/models/item/steel_block.json"
-        ]
-      }
-    },
-    {
       "name": "SteelBlockRecipe",
       "type": "recipe",
       "sortid": 21,
@@ -296,6 +282,22 @@
           "src/main/java/com/grouptwosoftworks/steelpack/tiers/SteelpackModTiers.java"
         ]
       }
+    },
+    {
+      "name": "SteelBlock",
+      "type": "block",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "steel_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/steelpack/models/block/steel_block.json",
+          "src/main/resources/assets/steelpack/blockstates/steel_block.json",
+          "src/main/java/com/grouptwosoftworks/steelpack/block/SteelBlockBlock.java",
+          "src/main/resources/assets/steelpack/models/item/steel_block.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -308,7 +310,7 @@
       "item.steelpack.steel_armor_leggings": "Steel Leggings",
       "item.steelpack.steel_pickaxe": "Steel Pickaxe",
       "item.steelpack.steel_shovel": "Steel Shovel",
-      "item.steelpack.steel_block": "Block of Steel",
+      "block.steelpack.steel_block": "Block of Steel",
       "item.steelpack.steel_armor_chestplate": "Steel Chestplate",
       "item.steelpack.steel_axe": "Steel Axe",
       "item.steelpack.steel_hoe": "Steel Hoe",

@@ -8,14 +8,15 @@ import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
 
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.BlockItem;
 
 import com.grouptwosoftworks.steelpack.item.SteelSwordItem;
 import com.grouptwosoftworks.steelpack.item.SteelShovelItem;
 import com.grouptwosoftworks.steelpack.item.SteelPickaxeItem;
 import com.grouptwosoftworks.steelpack.item.SteelIngotItem;
 import com.grouptwosoftworks.steelpack.item.SteelHoeItem;
-import com.grouptwosoftworks.steelpack.item.SteelBlockItem;
 import com.grouptwosoftworks.steelpack.item.SteelAxeItem;
 import com.grouptwosoftworks.steelpack.item.SteelArmorItem;
 import com.grouptwosoftworks.steelpack.SteelpackMod;
@@ -32,5 +33,9 @@ public class SteelpackModItems {
 	public static final RegistryObject<Item> STEEL_SWORD = REGISTRY.register("steel_sword", () -> new SteelSwordItem());
 	public static final RegistryObject<Item> STEEL_SHOVEL = REGISTRY.register("steel_shovel", () -> new SteelShovelItem());
 	public static final RegistryObject<Item> STEEL_HOE = REGISTRY.register("steel_hoe", () -> new SteelHoeItem());
-	public static final RegistryObject<Item> STEEL_BLOCK = REGISTRY.register("steel_block", () -> new SteelBlockItem());
+	public static final RegistryObject<Item> STEEL_BLOCK = block(SteelpackModBlocks.STEEL_BLOCK);
+
+	private static RegistryObject<Item> block(RegistryObject<Block> block) {
+		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
+	}
 }
