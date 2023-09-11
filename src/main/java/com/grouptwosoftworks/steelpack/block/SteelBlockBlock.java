@@ -3,7 +3,6 @@ package com.grouptwosoftworks.steelpack.block;
 
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
@@ -19,7 +18,7 @@ import java.util.Collections;
 
 public class SteelBlockBlock extends Block {
 	public SteelBlockBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.METAL).sound(SoundType.GRAVEL).strength(1f, 10f).requiresCorrectToolForDrops());
+		super(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(5f, 10f).requiresCorrectToolForDrops());
 	}
 
 	@Override
