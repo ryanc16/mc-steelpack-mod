@@ -4,7 +4,7 @@
   "definition": {
     "toolType": "Pickaxe",
     "renderType": 0,
-    "texture": "diamondtipped_pickaxe",
+    "texture": "diamond_tipped_pickaxe",
     "customModelName": "Normal",
     "name": "Diamond Tipped Pickaxe",
     "specialInfo": [],

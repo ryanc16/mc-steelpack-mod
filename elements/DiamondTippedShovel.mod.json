@@ -4,9 +4,9 @@
   "definition": {
     "toolType": "Spade",
     "renderType": 0,
-    "texture": "diamondtipped_shovel",
+    "texture": "diamond_tipped_shovel",
     "customModelName": "Normal",
-    "name": "DiamondTipped Shovel",
+    "name": "Diamond Tipped Shovel",
     "specialInfo": [],
     "creativeTab": {
       "value": "TOOLS"

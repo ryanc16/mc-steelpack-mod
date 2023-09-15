@@ -4,9 +4,9 @@
   "definition": {
     "toolType": "Sword",
     "renderType": 0,
-    "texture": "diamondtipped_sword",
+    "texture": "diamond_tipped_sword",
     "customModelName": "Normal",
-    "name": "DiamondTipped Sword",
+    "name": "Diamond Tipped Sword",
     "specialInfo": [],
     "creativeTab": {
       "value": "COMBAT"

@@ -4,9 +4,9 @@
   "definition": {
     "toolType": "Hoe",
     "renderType": 0,
-    "texture": "diamondtipped_hoe",
+    "texture": "diamond_tipped_hoe",
     "customModelName": "Normal",
-    "name": "DiamondTipped Hoe",
+    "name": "Diamond Tipped Hoe",
     "specialInfo": [],
     "creativeTab": {
       "value": "TOOLS"

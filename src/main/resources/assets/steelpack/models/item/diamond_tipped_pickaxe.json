@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "steelpack:item/diamondtipped_pickaxe"
+    "layer0": "steelpack:item/diamond_tipped_pickaxe"
   }
 }

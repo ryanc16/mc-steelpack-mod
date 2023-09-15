@@ -311,153 +311,6 @@
           "src/main/resources/data/steelpack/advancements/steel_advancement.json"
         ]
       }
-    },
-    {
-      "name": "DiamondTippedPickaxe",
-      "type": "tool",
-      "sortid": 32,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "diamond_tipped_pickaxe",
-      "metadata": {
-        "files": [
-          "src/main/java/com/grouptwosoftworks/steelpack/item/DiamondTippedPickaxeItem.java",
-          "src/main/resources/assets/steelpack/models/item/diamond_tipped_pickaxe.json"
-        ]
-      }
-    },
-    {
-      "name": "DiamondTippedAxe",
-      "type": "tool",
-      "sortid": 33,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "diamond_tipped_axe",
-      "metadata": {
-        "files": [
-          "src/main/java/com/grouptwosoftworks/steelpack/item/DiamondTippedAxeItem.java",
-          "src/main/resources/assets/steelpack/models/item/diamond_tipped_axe.json"
-        ]
-      }
-    },
-    {
-      "name": "DiamondTippedSword",
-      "type": "tool",
-      "sortid": 34,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "diamond_tipped_sword",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/steelpack/models/item/diamond_tipped_sword.json",
-          "src/main/java/com/grouptwosoftworks/steelpack/item/DiamondTippedSwordItem.java"
-        ]
-      }
-    },
-    {
-      "name": "DiamondTippedShovel",
-      "type": "tool",
-      "sortid": 35,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "diamond_tipped_shovel",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/steelpack/models/item/diamond_tipped_shovel.json",
-          "src/main/java/com/grouptwosoftworks/steelpack/item/DiamondTippedShovelItem.java"
-        ]
-      }
-    },
-    {
-      "name": "DiamondTippedHoe",
-      "type": "tool",
-      "sortid": 36,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "diamond_tipped_hoe",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/steelpack/models/item/diamond_tipped_hoe.json",
-          "src/main/java/com/grouptwosoftworks/steelpack/item/DiamondTippedHoeItem.java"
-        ]
-      }
-    },
-    {
-      "name": "DiamondTippedPickaxeRecipe",
-      "type": "recipe",
-      "sortid": 27,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "diamond_tipped_pickaxe_recipe",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/steelpack/recipes/diamond_tipped_pickaxe_recipe.json"
-        ]
-      }
-    },
-    {
-      "name": "DiamondTippedAxeRecipe",
-      "type": "recipe",
-      "sortid": 28,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "diamond_tipped_axe_recipe",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/steelpack/recipes/diamond_tipped_axe_recipe.json"
-        ]
-      }
-    },
-    {
-      "name": "DiamondTippedSwordRecipe",
-      "type": "recipe",
-      "sortid": 29,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "diamond_tipped_sword_recipe",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/steelpack/recipes/diamond_tipped_sword_recipe.json"
-        ]
-      }
-    },
-    {
-      "name": "DiamondTippedShovelRecipe",
-      "type": "recipe",
-      "sortid": 30,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "diamond_tipped_shovel_recipe",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/steelpack/recipes/diamond_tipped_shovel_recipe.json"
-        ]
-      }
-    },
-    {
-      "name": "DiamondTippedHoeRecipe",
-      "type": "recipe",
-      "sortid": 31,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "diamond_tipped_hoe_recipe",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/steelpack/recipes/diamond_tipped_hoe_recipe.json"
-        ]
-      }
-    },
-    {
-      "name": "DiamondTippedTier",
-      "type": "code",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "diamond_tipped_tier",
-      "metadata": {
-        "files": [
-          "src/main/java/com/grouptwosoftworks/steelpack/tiers/DiamondTippedTier.java"
-        ]
-      }
     }
   ],
   "variable_elements": [],
@@ -465,18 +318,13 @@
   "language_map": {
     "en_us": {
       "item.steelpack.steel_armor_helmet": "Steel Helmet",
-      "advancements.steel_advancement.descr": "Smelt a Steel Ingot",
-      "item.steelpack.diamond_tipped_sword": "DiamondTipped Sword",
-      "item.steelpack.diamond_tipped_hoe": "DiamondTipped Hoe",
-      "item.steelpack.steel_armor_leggings": "Steel Leggings",
+      "advancements.steel_advancement.descr": "Obtain steel",
       "item.steelpack.steel_pickaxe": "Steel Pickaxe",
-      "item.steelpack.diamond_tipped_axe": "DiamondTipped Axe",
+      "item.steelpack.steel_armor_leggings": "Steel Leggings",
       "item.steelpack.steel_axe": "Steel Axe",
-      "item.steelpack.diamond_tipped_shovel": "DiamondTipped Shovel",
       "item.steelpack.steel_ingot": "Steel Ingot",
       "item.steelpack.steel_armor_boots": "Steel Boots",
-      "item.steelpack.diamond_tipped_pickaxe": "Diamond Tipped Pickaxe",
-      "advancements.steel_advancement.title": "Steel or No Steel",
+      "advancements.steel_advancement.title": "Steel Advancement",
       "item.steelpack.steel_sword": "Steel Sword",
       "item.steelpack.steel_shovel": "Steel Shovel",
       "block.steelpack.steel_block": "Block of Steel",

@@ -4,9 +4,9 @@
   "definition": {
     "toolType": "Axe",
     "renderType": 0,
-    "texture": "diamondtipped_axe",
+    "texture": "diamond_tipped_axe",
     "customModelName": "Normal",
-    "name": "DiamondTipped Axe",
+    "name": "Diamond Tipped Axe",
     "specialInfo": [],
     "creativeTab": {
       "value": "TOOLS"
