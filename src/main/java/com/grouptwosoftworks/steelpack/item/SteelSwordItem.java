@@ -2,9 +2,9 @@
 package com.grouptwosoftworks.steelpack.item;
 
 import com.grouptwosoftworks.steelpack.tiers.SteelTier;
-import net.minecraft.world.item.Tiers;
-import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tiers;
 
 public class SteelSwordItem extends SwordItem {
 	public SteelSwordItem() {

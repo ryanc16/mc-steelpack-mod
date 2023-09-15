@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "steelpack:diamond_tipped_sword"
+    }
+  },
+  "result": {
+    "item": "steelpack:diamond_tipped_sword",
+    "count": 1
+  }
+}

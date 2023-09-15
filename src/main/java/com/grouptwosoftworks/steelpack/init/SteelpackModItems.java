@@ -4,22 +4,14 @@
  */
 package com.grouptwosoftworks.steelpack.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.DeferredRegister;
-
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.BlockItem;
-
-import com.grouptwosoftworks.steelpack.item.SteelSwordItem;
-import com.grouptwosoftworks.steelpack.item.SteelShovelItem;
-import com.grouptwosoftworks.steelpack.item.SteelPickaxeItem;
-import com.grouptwosoftworks.steelpack.item.SteelIngotItem;
-import com.grouptwosoftworks.steelpack.item.SteelHoeItem;
-import com.grouptwosoftworks.steelpack.item.SteelAxeItem;
-import com.grouptwosoftworks.steelpack.item.SteelArmorItem;
 import com.grouptwosoftworks.steelpack.SteelpackMod;
+import com.grouptwosoftworks.steelpack.item.*;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class SteelpackModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, SteelpackMod.MODID);
@@ -34,6 +26,11 @@ public class SteelpackModItems {
 	public static final RegistryObject<Item> STEEL_SHOVEL = REGISTRY.register("steel_shovel", () -> new SteelShovelItem());
 	public static final RegistryObject<Item> STEEL_HOE = REGISTRY.register("steel_hoe", () -> new SteelHoeItem());
 	public static final RegistryObject<Item> STEEL_BLOCK = block(SteelpackModBlocks.STEEL_BLOCK);
+	public static final RegistryObject<Item> DIAMOND_TIPPED_PICKAXE = REGISTRY.register("diamond_tipped_pickaxe", () -> new DiamondTippedPickaxeItem());
+	public static final RegistryObject<Item> DIAMOND_TIPPED_AXE = REGISTRY.register("diamond_tipped_axe", () -> new DiamondTippedAxeItem());
+	public static final RegistryObject<Item> DIAMOND_TIPPED_SWORD = REGISTRY.register("diamond_tipped_sword", () -> new DiamondTippedSwordItem());
+	public static final RegistryObject<Item> DIAMOND_TIPPED_SHOVEL = REGISTRY.register("diamond_tipped_shovel", () -> new DiamondTippedShovelItem());
+	public static final RegistryObject<Item> DIAMOND_TIPPED_HOE = REGISTRY.register("diamond_tipped_hoe", () -> new DiamondTippedHoeItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

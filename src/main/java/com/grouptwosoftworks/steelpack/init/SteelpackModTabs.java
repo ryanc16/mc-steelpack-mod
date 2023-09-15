@@ -4,16 +4,14 @@
  */
 package com.grouptwosoftworks.steelpack.init;
 
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.core.registries.Registries;
-
 import com.grouptwosoftworks.steelpack.SteelpackMod;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.DeferredRegister;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SteelpackModTabs {
@@ -32,6 +30,7 @@ public class SteelpackModTabs {
 			tabData.accept(SteelpackModItems.STEEL_ARMOR_LEGGINGS.get());
 			tabData.accept(SteelpackModItems.STEEL_ARMOR_BOOTS.get());
 			tabData.accept(SteelpackModItems.STEEL_SWORD.get());
+			tabData.accept(SteelpackModItems.DIAMOND_TIPPED_SWORD.get());
 		}
 
 		if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
@@ -43,6 +42,10 @@ public class SteelpackModTabs {
 			tabData.accept(SteelpackModItems.STEEL_PICKAXE.get());
 			tabData.accept(SteelpackModItems.STEEL_SHOVEL.get());
 			tabData.accept(SteelpackModItems.STEEL_HOE.get());
+			tabData.accept(SteelpackModItems.DIAMOND_TIPPED_PICKAXE.get());
+			tabData.accept(SteelpackModItems.DIAMOND_TIPPED_AXE.get());
+			tabData.accept(SteelpackModItems.DIAMOND_TIPPED_SHOVEL.get());
+			tabData.accept(SteelpackModItems.DIAMOND_TIPPED_HOE.get());
 		}
 	}
 }

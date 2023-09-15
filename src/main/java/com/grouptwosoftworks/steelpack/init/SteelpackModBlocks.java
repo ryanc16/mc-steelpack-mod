@@ -4,14 +4,12 @@
  */
 package com.grouptwosoftworks.steelpack.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.DeferredRegister;
-
-import net.minecraft.world.level.block.Block;
-
-import com.grouptwosoftworks.steelpack.block.SteelBlockBlock;
 import com.grouptwosoftworks.steelpack.SteelpackMod;
+import com.grouptwosoftworks.steelpack.block.SteelBlockBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class SteelpackModBlocks {
 	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, SteelpackMod.MODID);

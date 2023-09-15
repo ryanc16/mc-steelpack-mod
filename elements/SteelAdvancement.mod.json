@@ -2,8 +2,8 @@
   "_fv": 47,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Steel Advancement",
-    "achievementDescription": "Obtain steel",
+    "achievementName": "Steel or No Steel",
+    "achievementDescription": "Smelt a Steel Ingot",
     "achievementIcon": {
       "value": "CUSTOM:SteelIngot"
     },
