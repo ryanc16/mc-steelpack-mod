@@ -1,13 +1,15 @@
 {
-  "item.steelpack.steel_armor_boots": "Steel Boots",
   "item.steelpack.steel_armor_helmet": "Steel Helmet",
-  "item.steelpack.steel_sword": "Steel Sword",
-  "item.steelpack.steel_armor_leggings": "Steel Leggings",
+  "advancements.steel_advancement.descr": "Obtain Steel",
   "item.steelpack.steel_pickaxe": "Steel Pickaxe",
+  "item.steelpack.steel_armor_leggings": "Steel Leggings",
+  "item.steelpack.steel_axe": "Steel Axe",
+  "item.steelpack.steel_ingot": "Steel Ingot",
+  "item.steelpack.steel_armor_boots": "Steel Boots",
+  "advancements.steel_advancement.title": "Steel Advancement",
+  "item.steelpack.steel_sword": "Steel Sword",
   "item.steelpack.steel_shovel": "Steel Shovel",
   "block.steelpack.steel_block": "Block of Steel",
   "item.steelpack.steel_armor_chestplate": "Steel Chestplate",
-  "item.steelpack.steel_axe": "Steel Axe",
-  "item.steelpack.steel_hoe": "Steel Hoe",
-  "item.steelpack.steel_ingot": "Steel Ingot"
+  "item.steelpack.steel_hoe": "Steel Hoe"
 }

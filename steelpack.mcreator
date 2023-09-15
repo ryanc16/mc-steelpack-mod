@@ -298,23 +298,38 @@
           "src/main/resources/assets/steelpack/models/item/steel_block.json"
         ]
       }
+    },
+    {
+      "name": "SteelAdvancement",
+      "type": "achievement",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "steel_advancement",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/steelpack/advancements/steel_advancement.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.steelpack.steel_armor_boots": "Steel Boots",
       "item.steelpack.steel_armor_helmet": "Steel Helmet",
-      "item.steelpack.steel_sword": "Steel Sword",
-      "item.steelpack.steel_armor_leggings": "Steel Leggings",
+      "advancements.steel_advancement.descr": "Obtain steel",
       "item.steelpack.steel_pickaxe": "Steel Pickaxe",
+      "item.steelpack.steel_armor_leggings": "Steel Leggings",
+      "item.steelpack.steel_axe": "Steel Axe",
+      "item.steelpack.steel_ingot": "Steel Ingot",
+      "item.steelpack.steel_armor_boots": "Steel Boots",
+      "advancements.steel_advancement.title": "Steel Advancement",
+      "item.steelpack.steel_sword": "Steel Sword",
       "item.steelpack.steel_shovel": "Steel Shovel",
       "block.steelpack.steel_block": "Block of Steel",
       "item.steelpack.steel_armor_chestplate": "Steel Chestplate",
-      "item.steelpack.steel_axe": "Steel Axe",
-      "item.steelpack.steel_hoe": "Steel Hoe",
-      "item.steelpack.steel_ingot": "Steel Ingot"
+      "item.steelpack.steel_hoe": "Steel Hoe"
     }
   },
   "foldersRoot": {
