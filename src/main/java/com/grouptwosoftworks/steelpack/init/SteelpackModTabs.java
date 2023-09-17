@@ -30,7 +30,6 @@ public class SteelpackModTabs {
 			tabData.accept(SteelpackModItems.STEEL_ARMOR_LEGGINGS.get());
 			tabData.accept(SteelpackModItems.STEEL_ARMOR_BOOTS.get());
 			tabData.accept(SteelpackModItems.STEEL_SWORD.get());
-			tabData.accept(SteelpackModItems.DIAMOND_TIPPED_SWORD.get());
 		}
 
 		if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {

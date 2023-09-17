@@ -28,7 +28,6 @@ public class SteelpackModItems {
 	public static final RegistryObject<Item> STEEL_BLOCK = block(SteelpackModBlocks.STEEL_BLOCK);
 	public static final RegistryObject<Item> DIAMOND_TIPPED_PICKAXE = REGISTRY.register("diamond_tipped_pickaxe", () -> DiamondTippedTools.DIAMOND_TIPPED_PICKAXE_ITEM);
 	public static final RegistryObject<Item> DIAMOND_TIPPED_AXE = REGISTRY.register("diamond_tipped_axe", () -> DiamondTippedTools.DIAMOND_TIPPED_AXE_ITEM);
-	public static final RegistryObject<Item> DIAMOND_TIPPED_SWORD = REGISTRY.register("diamond_tipped_sword", () -> new DiamondTippedSwordItem());
 	public static final RegistryObject<Item> DIAMOND_TIPPED_SHOVEL = REGISTRY.register("diamond_tipped_shovel", () -> DiamondTippedTools.DIAMOND_TIPPED_SHOVEL_ITEM);
 	public static final RegistryObject<Item> DIAMOND_TIPPED_HOE = REGISTRY.register("diamond_tipped_hoe", () -> DiamondTippedTools.DIAMOND_TIPPED_HOE_ITEM);
 	public static final RegistryObject<Item> DIAMOND_TIPPED_UPGRADE_SMITHING_TEMPLATE_ITEM = REGISTRY.register("diamond_tipped_upgrade_smithing_template", () -> new DiamondTippedUpgradeTemplateItem());
