@@ -20,6 +20,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.player.PlayerContainerEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -83,5 +84,10 @@ public class SteelpackMod {
 			actions.forEach(e -> e.getKey().run());
 			workQueue.removeAll(actions);
 		}
+	}
+
+	@SubscribeEvent
+	public void onContainerOpenedOrClosed(PlayerContainerEvent containerEvent) {
+
 	}
 }

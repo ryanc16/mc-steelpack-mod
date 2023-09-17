@@ -16,5 +16,10 @@
   "item.steelpack.steel_shovel": "Steel Shovel",
   "block.steelpack.steel_block": "Block of Steel",
   "item.steelpack.steel_armor_chestplate": "Steel Chestplate",
-  "item.steelpack.steel_hoe": "Steel Hoe"
+  "item.steelpack.steel_hoe": "Steel Hoe",
+  "item.steelpack.smithing_template.diamond_tipped_upgrade.applies_to": "Steel Equipment",
+  "item.steelpack.smithing_template.diamond_tipped_upgrade.base_slot_description": "Add a steel tool",
+  "upgrade.steelpack.diamond_tipped_upgrade": "Diamond Tipped Upgrade",
+  "item.steelpack.smithing_template.diamond_tipped_upgrade.additions_slot_description": "Add Diamond",
+  "item.steelpack.smithing_template.diamond_tipped_upgrade.ingredients": "Diamond"
 }

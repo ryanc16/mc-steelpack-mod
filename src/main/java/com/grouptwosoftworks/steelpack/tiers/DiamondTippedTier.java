@@ -7,7 +7,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 public class DiamondTippedTier implements Tier {
     @Override
     public int getUses() {
-        return 500;
+        return SteelpackModTiers.STEEL.getUses();
     }
 
     @Override

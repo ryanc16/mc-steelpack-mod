@@ -35,6 +35,7 @@ public class SteelpackModTabs {
 
 		if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
 			tabData.accept(SteelpackModItems.STEEL_INGOT.get());
+			tabData.accept(SteelpackModItems.DIAMOND_TIPPED_UPGRADE_SMITHING_TEMPLATE_ITEM.get());
 		}
 
 		if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
