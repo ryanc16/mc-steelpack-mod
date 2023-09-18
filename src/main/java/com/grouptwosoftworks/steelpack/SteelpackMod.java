@@ -16,11 +16,15 @@ package com.grouptwosoftworks.steelpack;
 import com.grouptwosoftworks.steelpack.init.SteelpackModBlocks;
 import com.grouptwosoftworks.steelpack.init.SteelpackModItems;
 import com.grouptwosoftworks.steelpack.init.SteelpackModTabs;
+import com.grouptwosoftworks.steelpack.item.ItemDowngradeUtils;
+import com.mojang.logging.LogUtils;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.player.PlayerContainerEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -28,8 +32,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;
@@ -42,7 +45,7 @@ import java.util.function.Supplier;
 
 @Mod("steelpack")
 public class SteelpackMod {
-	public static final Logger LOGGER = LogManager.getLogger(SteelpackMod.class);
+	public static final Logger LOGGER = LogUtils.getLogger();
 	public static final String MODID = "steelpack";
 
 	public SteelpackMod() {
@@ -87,7 +90,18 @@ public class SteelpackMod {
 	}
 
 	@SubscribeEvent
-	public void onContainerOpenedOrClosed(PlayerContainerEvent containerEvent) {
+	public void onContainerOpened(PlayerContainerEvent.Open containerEvent) {
 
 	}
+
+	@SubscribeEvent
+	public void onPlayerUseItem(LivingEntityUseItemEvent.Finish event) {
+
+	}
+
+	@SubscribeEvent
+	public void onBlockBreak(BlockEvent.BreakEvent event) {
+		ItemDowngradeUtils.handleBlockBreakEvent(event);
+	}
+
 }
