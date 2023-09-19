@@ -4,6 +4,9 @@ import net.minecraft.world.item.TieredItem;
 
 import java.util.List;
 
+/**
+ * A barrel-like export of static instances of all SteelWeapons.
+ */
 public class SteelWeapons {
 
 	public static final SteelWeaponItem.SteelSwordItem STEEL_SWORD_ITEM = new SteelWeaponItem.SteelSwordItem();

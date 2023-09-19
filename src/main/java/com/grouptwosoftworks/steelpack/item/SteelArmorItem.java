@@ -12,7 +12,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public abstract class SteelArmorItem extends ArmorItem {
+/**
+ * Steel Armor classes
+ */
+public abstract class SteelArmorItem extends ArmorItem implements SteelItem {
 	public SteelArmorItem(ArmorItem.Type type, Item.Properties properties) {
 		super(new ArmorMaterial() {
 			@Override

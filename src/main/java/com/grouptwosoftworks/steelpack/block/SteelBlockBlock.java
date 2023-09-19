@@ -15,9 +15,16 @@ import net.minecraft.world.level.storage.loot.LootParams;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * A Block of Steel
+ */
 public class SteelBlockBlock extends Block {
+
+	private static final float destroyTime = 5f;
+	private static final float explosionResistance = 10f;
+
 	public SteelBlockBlock() {
-		super(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(5f, 10f).requiresCorrectToolForDrops());
+		super(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(destroyTime, explosionResistance).requiresCorrectToolForDrops());
 	}
 
 	@Override

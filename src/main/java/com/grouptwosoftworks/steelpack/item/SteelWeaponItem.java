@@ -5,6 +5,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 
+/**
+ * SteelWeapon classes
+ */
 public class SteelWeaponItem {
 
 	public static class SteelSwordItem extends SwordItem {

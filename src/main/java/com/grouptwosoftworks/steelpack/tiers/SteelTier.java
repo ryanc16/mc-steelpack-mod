@@ -1,51 +1,79 @@
-/**
- * The code of this mod element is always locked.
- * <p>
- * You can register new events in this class too.
- * <p>
- * If you want to make a plain independent class, create it using
- * Project Browser -> New... and make sure to make the class
- * outside com.grouptwosoftworks.steelpack as this package is managed by MCreator.
- * <p>
- * If you change workspace package, modid or prefix, you will need
- * to manually adapt this file to these changes or remake it.
- * <p>
- * This class will be added in the mod root package.
- */
 package com.grouptwosoftworks.steelpack.tiers;
 
 import com.grouptwosoftworks.steelpack.init.SteelpackModItems;
+import com.grouptwosoftworks.steelpack.item.Steel;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 
-public class SteelTier implements Tier {
+/**
+ * The SteelTier specifies the tier values for SteelTools.
+ * It is currently mostly balanced between that of Iron and Diamond tiers.
+ */
+public class SteelTier implements Steel, Tier {
 
-	@Override
-	public int getLevel() {
-		return 2;
-	}
-
+	/**
+	 * Get the maximum number of uses for a SteelToolTier item,
+	 * which is currently 500; 2x that of Iron.
+	 *
+	 * @return The maximum number of uses for this tier.
+	 */
 	@Override
 	public int getUses() {
 		return 500;
 	}
 
+	/**
+	 * Get the speed (harvest efficiency) for a SteelToolTier item,
+	 * which is currently 7; greater than Iron, but less than Diamond.
+	 *
+	 * @return The speed (harvest efficiency) for this tier.
+	 */
 	@Override
 	public float getSpeed() {
 		return 7f;
 	}
 
+	/**
+	 * Get the attack damage bonus value for a SteelToolTier item,
+	 * which is currently 2.5; greater than Iron, but less than Diamond.
+	 *
+	 * @return The attack damage bonus for this tier.
+	 */
 	@Override
 	public float getAttackDamageBonus() {
 		return 2.5f;
 	}
 
+	/**
+	 * Get the level (harvest level) for a SteelToolTier item,
+	 * which is currently that of Iron.
+	 *
+	 * @return The level (harvest level) for this tier.
+	 */
+	@Override
+	public int getLevel() {
+		return Tiers.IRON.getLevel();
+	}
+
+	/**
+	 * Get the enchantment value for a SteelToolTier item,
+	 * which is currently 12; grater than Diamond, but less than Iron.
+	 *
+	 * @return The enchantment value for this tier.
+	 */
 	@Override
 	public int getEnchantmentValue() {
 		return 12;
 	}
 
+	/**
+	 * Get the required ingredient used to repair items for a SteelToolTier item,
+	 * which is Steel Ingots.
+	 *
+	 * @return The ingredient used to repair items in this tier.
+	 */
 	@Override
 	public Ingredient getRepairIngredient() {
 		return Ingredient.of(new ItemStack(SteelpackModItems.STEEL_INGOT.get()));

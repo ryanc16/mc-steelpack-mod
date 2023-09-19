@@ -4,7 +4,7 @@
  */
 package com.grouptwosoftworks.steelpack.init;
 
-import com.grouptwosoftworks.steelpack.SteelpackMod;
+import com.grouptwosoftworks.steelpack.Constants;
 import com.grouptwosoftworks.steelpack.item.DiamondTippedTools;
 import com.grouptwosoftworks.steelpack.item.DiamondTippedUpgradeTemplateItem;
 import com.grouptwosoftworks.steelpack.item.SteelArmor;
@@ -18,8 +18,13 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+/**
+ * Registry and static access reference to registered items
+ */
 public class SteelpackModItems {
-	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, SteelpackMod.MODID);
+	private SteelpackModItems() {}
+
+	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MODID);
 	public static final RegistryObject<Item> STEEL_INGOT = REGISTRY.register("steel_ingot", () -> new SteelIngotItem());
 	public static final RegistryObject<Item> STEEL_ARMOR_HELMET = REGISTRY.register("steel_armor_helmet", () -> SteelArmor.STEEL_ARMOR_HELMET_ITEM);
 	public static final RegistryObject<Item> STEEL_ARMOR_CHESTPLATE = REGISTRY.register("steel_armor_chestplate", () -> SteelArmor.STEEL_ARMOR_CHESTPLATE);

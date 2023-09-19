@@ -4,12 +4,15 @@ import net.minecraft.world.item.TieredItem;
 
 import java.util.List;
 
+/**
+ * A barrel-like export of static instances of all SteelTools.
+ */
 public class SteelTools {
 
-	public static final SteelToolItem.SteelAxe STEEL_AXE_ITEM = new SteelToolItem.SteelAxe();
-	public static final SteelToolItem.SteelHoeItem STEEL_HOE_ITEM = new SteelToolItem.SteelHoeItem();
-	public static final SteelToolItem.SteelPickaxeItem STEEL_PICKAXE_ITEM = new SteelToolItem.SteelPickaxeItem();
-	public static final SteelToolItem.SteelShovelItem STEEL_SHOVEL_ITEM = new SteelToolItem.SteelShovelItem();
+	public static final SteelToolItems.SteelAxe STEEL_AXE_ITEM = new SteelToolItems.SteelAxe();
+	public static final SteelToolItems.SteelHoeItem STEEL_HOE_ITEM = new SteelToolItems.SteelHoeItem();
+	public static final SteelToolItems.SteelPickaxeItem STEEL_PICKAXE_ITEM = new SteelToolItems.SteelPickaxeItem();
+	public static final SteelToolItems.SteelShovelItem STEEL_SHOVEL_ITEM = new SteelToolItems.SteelShovelItem();
 
 	public static final List<TieredItem> STEEL_TIER_TOOLS = List.of(
 		STEEL_AXE_ITEM,

@@ -13,8 +13,6 @@
  */
 package com.grouptwosoftworks.steelpack;
 
-import com.grouptwosoftworks.steelpack.eventhandlers.BlockBreakEventHandler;
-import com.grouptwosoftworks.steelpack.eventhandlers.ItemDowngradeEventHandler;
 import com.grouptwosoftworks.steelpack.init.SteelpackModBlocks;
 import com.grouptwosoftworks.steelpack.init.SteelpackModItems;
 import com.grouptwosoftworks.steelpack.init.SteelpackModTabs;
@@ -25,7 +23,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.player.PlayerContainerEvent;
-import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -44,17 +41,14 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-@Mod("steelpack")
+@Mod(Constants.MODID)
 public class SteelpackMod {
 	public static final Logger LOGGER = LogUtils.getLogger();
-	public static final String MODID = "steelpack";
-
-	private final BlockBreakEventHandler blockBreakEventHandler;
+	private static final String PROTOCOL_VERSION = "1";
+	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation(Constants.MODID, Constants.MODID), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
+	private static int messageID = 0;
 
 	public SteelpackMod() {
-		blockBreakEventHandler = new BlockBreakEventHandler()
-			.register(new ItemDowngradeEventHandler());
-
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -63,12 +57,7 @@ public class SteelpackMod {
 		SteelpackModItems.REGISTRY.register(bus);
 
 		SteelpackModTabs.REGISTRY.register(bus);
-
 	}
-
-	private static final String PROTOCOL_VERSION = "1";
-	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation(MODID, MODID), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
-	private static int messageID = 0;
 
 	public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
 		PACKET_HANDLER.registerMessage(messageID, messageType, encoder, decoder, messageConsumer);
@@ -104,10 +93,4 @@ public class SteelpackMod {
 	public void onPlayerUseItem(LivingEntityUseItemEvent.Finish event) {
 
 	}
-
-	@SubscribeEvent
-	public void onBlockBreak(BlockEvent.BreakEvent blockBreakEvent) {
-		blockBreakEventHandler.accept(blockBreakEvent);
-	}
-
 }
