@@ -5,12 +5,12 @@
 package com.grouptwosoftworks.steelpack.init;
 
 import com.grouptwosoftworks.steelpack.Constants;
-import com.grouptwosoftworks.steelpack.item.DiamondTippedTools;
-import com.grouptwosoftworks.steelpack.item.DiamondTippedUpgradeTemplateItem;
-import com.grouptwosoftworks.steelpack.item.SteelArmor;
-import com.grouptwosoftworks.steelpack.item.SteelIngotItem;
-import com.grouptwosoftworks.steelpack.item.SteelTools;
-import com.grouptwosoftworks.steelpack.item.SteelWeapons;
+import com.grouptwosoftworks.steelpack.item.diamondtipped.tools.DiamondTippedTools;
+import com.grouptwosoftworks.steelpack.item.smithingtemplates.DiamondTippedUpgradeTemplateItem;
+import com.grouptwosoftworks.steelpack.item.steel.armor.SteelArmor;
+import com.grouptwosoftworks.steelpack.item.steel.SteelIngotItem;
+import com.grouptwosoftworks.steelpack.item.steel.tools.SteelTools;
+import com.grouptwosoftworks.steelpack.item.steel.weapons.SteelWeapons;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;

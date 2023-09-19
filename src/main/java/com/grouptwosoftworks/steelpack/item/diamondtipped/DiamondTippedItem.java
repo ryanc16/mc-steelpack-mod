@@ -1,4 +1,4 @@
-package com.grouptwosoftworks.steelpack.item;
+package com.grouptwosoftworks.steelpack.item.diamondtipped;
 
 import net.minecraft.world.level.ItemLike;
 

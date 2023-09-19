@@ -1,6 +1,7 @@
-package com.grouptwosoftworks.steelpack.item;
+package com.grouptwosoftworks.steelpack.item.steel.armor;
 
 import com.grouptwosoftworks.steelpack.init.SteelpackModItems;
+import com.grouptwosoftworks.steelpack.item.steel.SteelItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.Entity;

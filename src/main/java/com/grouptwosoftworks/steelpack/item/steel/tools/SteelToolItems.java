@@ -1,4 +1,4 @@
-package com.grouptwosoftworks.steelpack.item;
+package com.grouptwosoftworks.steelpack.item.steel.tools;
 
 import com.grouptwosoftworks.steelpack.tiers.SteelpackModTiers;
 import net.minecraft.world.item.AxeItem;

@@ -1,4 +1,4 @@
-package com.grouptwosoftworks.steelpack.item;
+package com.grouptwosoftworks.steelpack.item.steel;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;

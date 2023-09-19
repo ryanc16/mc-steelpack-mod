@@ -1,5 +1,7 @@
-package com.grouptwosoftworks.steelpack.item;
+package com.grouptwosoftworks.steelpack.item.diamondtipped.tools;
 
+import com.grouptwosoftworks.steelpack.item.steel.tools.SteelToolItem;
+import com.grouptwosoftworks.steelpack.item.steel.tools.SteelTools;
 import com.grouptwosoftworks.steelpack.tiers.SteelpackModTiers;
 import com.grouptwosoftworks.steelpack.utils.ItemUpgradeUtils;
 import com.mojang.logging.LogUtils;

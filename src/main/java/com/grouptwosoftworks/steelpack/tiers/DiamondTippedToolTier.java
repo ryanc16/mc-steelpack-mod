@@ -1,6 +1,6 @@
 package com.grouptwosoftworks.steelpack.tiers;
 
-import com.grouptwosoftworks.steelpack.item.DiamondTipped;
+import com.grouptwosoftworks.steelpack.item.diamondtipped.DiamondTipped;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;

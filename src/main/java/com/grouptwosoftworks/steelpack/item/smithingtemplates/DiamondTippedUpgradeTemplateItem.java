@@ -1,4 +1,4 @@
-package com.grouptwosoftworks.steelpack.item;
+package com.grouptwosoftworks.steelpack.item.smithingtemplates;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

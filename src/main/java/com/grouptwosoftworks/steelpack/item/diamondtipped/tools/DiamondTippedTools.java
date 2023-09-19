@@ -1,4 +1,4 @@
-package com.grouptwosoftworks.steelpack.item;
+package com.grouptwosoftworks.steelpack.item.diamondtipped.tools;
 
 import net.minecraft.world.item.TieredItem;
 

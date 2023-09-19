@@ -1,4 +1,4 @@
-package com.grouptwosoftworks.steelpack.item;
+package com.grouptwosoftworks.steelpack.item.steel.tools;
 
 import net.minecraft.world.item.TieredItem;
 

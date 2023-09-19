@@ -1,4 +1,4 @@
-package com.grouptwosoftworks.steelpack.item;
+package com.grouptwosoftworks.steelpack.item.steel.armor;
 
 import net.minecraft.world.item.ArmorItem;
 

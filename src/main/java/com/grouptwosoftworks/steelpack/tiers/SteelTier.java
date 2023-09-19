@@ -1,7 +1,7 @@
 package com.grouptwosoftworks.steelpack.tiers;
 
 import com.grouptwosoftworks.steelpack.init.SteelpackModItems;
-import com.grouptwosoftworks.steelpack.item.Steel;
+import com.grouptwosoftworks.steelpack.item.steel.Steel;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
