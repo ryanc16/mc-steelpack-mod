@@ -1,4 +1,3 @@
-
 package com.grouptwosoftworks.steelpack.block;
 
 import net.minecraft.core.BlockPos;

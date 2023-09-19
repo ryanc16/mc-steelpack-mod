@@ -13,10 +13,11 @@
  */
 package com.grouptwosoftworks.steelpack;
 
+import com.grouptwosoftworks.steelpack.eventhandlers.BlockBreakEventHandler;
+import com.grouptwosoftworks.steelpack.eventhandlers.ItemDowngradeEventHandler;
 import com.grouptwosoftworks.steelpack.init.SteelpackModBlocks;
 import com.grouptwosoftworks.steelpack.init.SteelpackModItems;
 import com.grouptwosoftworks.steelpack.init.SteelpackModTabs;
-import com.grouptwosoftworks.steelpack.item.ItemDowngradeUtils;
 import com.mojang.logging.LogUtils;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -48,7 +49,12 @@ public class SteelpackMod {
 	public static final Logger LOGGER = LogUtils.getLogger();
 	public static final String MODID = "steelpack";
 
+	private final BlockBreakEventHandler blockBreakEventHandler;
+
 	public SteelpackMod() {
+		blockBreakEventHandler = new BlockBreakEventHandler()
+			.register(new ItemDowngradeEventHandler());
+
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -100,8 +106,8 @@ public class SteelpackMod {
 	}
 
 	@SubscribeEvent
-	public void onBlockBreak(BlockEvent.BreakEvent event) {
-		ItemDowngradeUtils.handleBlockBreakEvent(event);
+	public void onBlockBreak(BlockEvent.BreakEvent blockBreakEvent) {
+		blockBreakEventHandler.accept(blockBreakEvent);
 	}
 
 }

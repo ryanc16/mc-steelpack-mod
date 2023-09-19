@@ -1,4 +1,3 @@
-
 package com.grouptwosoftworks.steelpack.item;
 
 import com.grouptwosoftworks.steelpack.init.SteelpackModItems;

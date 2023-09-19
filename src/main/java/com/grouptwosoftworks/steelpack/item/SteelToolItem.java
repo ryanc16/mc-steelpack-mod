@@ -9,27 +9,27 @@ import net.minecraft.world.item.ShovelItem;
 
 public class SteelToolItem {
 
-    public static class SteelAxeItem extends AxeItem {
-        public SteelAxeItem() {
-            super(SteelpackModTiers.STEEL, 5.5f, -2.0f, new Item.Properties());
-        }
-    }
+	public static class SteelAxe extends AxeItem implements Upgradeable {
+		public SteelAxe() {
+			super(SteelpackModTiers.STEEL, 5.5f, -2.0f, new Item.Properties());
+		}
+	}
 
-    public static class SteelHoeItem extends HoeItem {
-        public SteelHoeItem() {
-            super(SteelpackModTiers.STEEL, -2, -0.5f, new Item.Properties());
-        }
-    }
+	public static class SteelHoeItem extends HoeItem implements Upgradeable {
+		public SteelHoeItem() {
+			super(SteelpackModTiers.STEEL, -2, -0.5f, new Item.Properties());
+		}
+	}
 
-    public static class SteelPickaxeItem extends PickaxeItem {
-        public SteelPickaxeItem() {
-            super(SteelpackModTiers.STEEL, 1, -2.8f, new Item.Properties());
-        }
-    }
+	public static class SteelPickaxeItem extends PickaxeItem implements Upgradeable {
+		public SteelPickaxeItem() {
+			super(SteelpackModTiers.STEEL, 1, -2.8f, new Item.Properties());
+		}
+	}
 
-    public static class SteelShovelItem extends ShovelItem {
-        public SteelShovelItem() {
-            super(SteelpackModTiers.STEEL, 1.5f, -3.0f, new Item.Properties());
-        }
-    }
+	public static class SteelShovelItem extends ShovelItem implements Upgradeable {
+		public SteelShovelItem() {
+			super(SteelpackModTiers.STEEL, 1.5f, -3.0f, new Item.Properties());
+		}
+	}
 }

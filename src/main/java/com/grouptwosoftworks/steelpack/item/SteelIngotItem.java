@@ -1,4 +1,3 @@
-
 package com.grouptwosoftworks.steelpack.item;
 
 import net.minecraft.world.item.Item;
