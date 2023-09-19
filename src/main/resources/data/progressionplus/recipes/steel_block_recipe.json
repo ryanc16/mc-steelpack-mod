@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "steel",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "progressionplus:steel_ingot"
+    },
+    {
+      "item": "progressionplus:steel_ingot"
+    },
+    {
+      "item": "progressionplus:steel_ingot"
+    },
+    {
+      "item": "progressionplus:steel_ingot"
+    },
+    {
+      "item": "progressionplus:steel_ingot"
+    },
+    {
+      "item": "progressionplus:steel_ingot"
+    },
+    {
+      "item": "progressionplus:steel_ingot"
+    },
+    {
+      "item": "progressionplus:steel_ingot"
+    },
+    {
+      "item": "progressionplus:steel_ingot"
+    }
+  ],
+  "result": {
+    "item": "progressionplus:steel_block",
+    "count": 1
+  }
+}

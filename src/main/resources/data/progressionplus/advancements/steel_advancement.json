@@ -1,0 +1,52 @@
+{
+  "display": {
+    "icon": {
+      "item": "progressionplus:steel_ingot"
+    },
+    "title": {
+      "translate": "advancements.progressionplus.steel_advancement.title"
+    },
+    "description": {
+      "translate": "advancements.progressionplus.steel_advancement.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "steel_advancement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "progressionplus:steel_ingot"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "progressionplus:steel_pickaxe_recipe",
+      "progressionplus:steel_axe_recipe",
+      "progressionplus:steel_sword_recipe",
+      "progressionplus:steel_shovel_recipe",
+      "progressionplus:steel_hoe_recipe",
+      "progressionplus:steel_helmet_recipe",
+      "progressionplus:steel_leggings_recipe",
+      "progressionplus:steel_chestplate_recipe",
+      "progressionplus:steel_boots_recipe",
+      "progressionplus:steel_block_recipe",
+      "progressionplus:steel_ingots_from_block_recipe"
+    ]
+  },
+  "parent": "minecraft:story/smelt_iron"
+}

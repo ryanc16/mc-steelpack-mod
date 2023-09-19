@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "progressionplus:item/diamond_tipped_pickaxe"
+  }
+}

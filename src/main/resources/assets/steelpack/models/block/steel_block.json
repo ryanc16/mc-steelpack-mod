@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "steelpack:block/steel_block_item",
-    "particle": "steelpack:block/steel_block_item"
-  },
-  "render_type": "solid"
-}

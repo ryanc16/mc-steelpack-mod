@@ -4,8 +4,8 @@ plugins {
 }
 
 version = '1.0'
-group = 'com.grouptwosoftworks.steelpack'
-archivesBaseName = 'steelpack'
+group = 'com.grouptwosoftworks.progressionplus'
+archivesBaseName = 'progressionplus'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 

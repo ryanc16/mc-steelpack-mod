@@ -3,15 +3,15 @@ loaderVersion="[47,)"
 license="MIT License"
 
 [[mods]]
-modId="steelpack"
+modId="progressionplus"
 version="1.0.0"
-displayName="Steel"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
-displayURL="https://mcreator.net"
-authors="GroupTwoSoftworks, MCreator"
-description="Adds Steel"
+displayName="Progression Plus"
+credits=""
+displayURL=""
+authors="GroupTwoSoftworks"
+description="Re-imagines the vanilla minecraft progression system."
 
-[[dependencies.steelpack]]
+[[dependencies.progressionplus]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.20.1]"
