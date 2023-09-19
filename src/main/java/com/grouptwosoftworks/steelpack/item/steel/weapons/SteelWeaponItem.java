@@ -11,8 +11,10 @@ import net.minecraft.world.item.Tiers;
 public class SteelWeaponItem {
 
 	public static class SteelSwordItem extends SwordItem {
+		private final static int BASE_ATTACK_DAMAGE = 3;
+		private final static float ATTACK_SPEED_MODIFIER = -2.4f;
 		public SteelSwordItem() {
-			super(new SteelSwordTier(), 3, -2.4f, new Item.Properties());
+			super(new SteelSwordTier(), BASE_ATTACK_DAMAGE, ATTACK_SPEED_MODIFIER, new Item.Properties());
 		}
 
 		private static final class SteelSwordTier extends SteelTier {

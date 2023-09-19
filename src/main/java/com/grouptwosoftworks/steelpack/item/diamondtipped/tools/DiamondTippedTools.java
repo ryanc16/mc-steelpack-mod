@@ -9,10 +9,10 @@ import java.util.List;
  */
 public class DiamondTippedTools {
 
-	public static final DiamondTippedToolItems.DiamondTippedAxeItem DIAMOND_TIPPED_AXE_ITEM = new DiamondTippedToolItems.DiamondTippedAxeItem();
-	public static final DiamondTippedToolItems.DiamondTippedHoeItem DIAMOND_TIPPED_HOE_ITEM = new DiamondTippedToolItems.DiamondTippedHoeItem();
-	public static final DiamondTippedToolItems.DiamondTippedPickaxeItem DIAMOND_TIPPED_PICKAXE_ITEM = new DiamondTippedToolItems.DiamondTippedPickaxeItem();
-	public static final DiamondTippedToolItems.DiamondTippedShovelItem DIAMOND_TIPPED_SHOVEL_ITEM = new DiamondTippedToolItems.DiamondTippedShovelItem();
+	public static final DiamondTippedAxeItem DIAMOND_TIPPED_AXE_ITEM = new DiamondTippedAxeItem();
+	public static final DiamondTippedHoeItem DIAMOND_TIPPED_HOE_ITEM = new DiamondTippedHoeItem();
+	public static final DiamondTippedPickaxeItem DIAMOND_TIPPED_PICKAXE_ITEM = new DiamondTippedPickaxeItem();
+	public static final DiamondTippedShovelItem DIAMOND_TIPPED_SHOVEL_ITEM = new DiamondTippedShovelItem();
 
 	public static final List<TieredItem> DIAMOND_TIPPED_TOOLS = List.of(
 		DIAMOND_TIPPED_AXE_ITEM,

@@ -9,10 +9,10 @@ import java.util.List;
  */
 public class SteelTools {
 
-	public static final SteelToolItems.SteelAxe STEEL_AXE_ITEM = new SteelToolItems.SteelAxe();
-	public static final SteelToolItems.SteelHoeItem STEEL_HOE_ITEM = new SteelToolItems.SteelHoeItem();
-	public static final SteelToolItems.SteelPickaxeItem STEEL_PICKAXE_ITEM = new SteelToolItems.SteelPickaxeItem();
-	public static final SteelToolItems.SteelShovelItem STEEL_SHOVEL_ITEM = new SteelToolItems.SteelShovelItem();
+	public static final SteelAxeItem STEEL_AXE_ITEM = new SteelAxeItem();
+	public static final SteelHoeItem STEEL_HOE_ITEM = new SteelHoeItem();
+	public static final SteelPickaxeItem STEEL_PICKAXE_ITEM = new SteelPickaxeItem();
+	public static final SteelShovelItem STEEL_SHOVEL_ITEM = new SteelShovelItem();
 
 	public static final List<TieredItem> STEEL_TIER_TOOLS = List.of(
 		STEEL_AXE_ITEM,
