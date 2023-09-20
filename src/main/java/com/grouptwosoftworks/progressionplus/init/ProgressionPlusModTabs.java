@@ -41,6 +41,8 @@ public class ProgressionPlusModTabs {
 		if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
 			tabData.accept(ProgressionPlusModItems.STEEL_INGOT.get());
 			tabData.accept(ProgressionPlusModItems.DIAMOND_TIPPED_UPGRADE_SMITHING_TEMPLATE_ITEM.get());
+			tabData.accept(ProgressionPlusModItems.DIAMOND_FRAGMENT.get());
+			tabData.accept(ProgressionPlusModItems.DIAMOND_DUST.get());
 		}
 
 		if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {

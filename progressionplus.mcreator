@@ -311,6 +311,60 @@
           "src/main/resources/data/progressionplus/advancements/steel_advancement.json"
         ]
       }
+    },
+    {
+      "name": "DiamondFragment",
+      "type": "item",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "diamond_fragment",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/progressionplus/models/item/diamond_fragment.json",
+          "src/main/java/com/grouptwosoftworks/progressionplus/item/DiamondFragmentItem.java"
+        ]
+      }
+    },
+    {
+      "name": "DiamondFragmentRecipe",
+      "type": "recipe",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "diamond_fragment_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/progressionplus/recipes/diamond_fragment_recipe.json"
+        ]
+      }
+    },
+    {
+      "name": "DiamondDust",
+      "type": "item",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "diamond_dust",
+      "metadata": {
+        "files": [
+          "src/main/java/com/grouptwosoftworks/progressionplus/item/DiamondDustItem.java",
+          "src/main/resources/assets/progressionplus/models/item/diamond_dust.json"
+        ]
+      }
+    },
+    {
+      "name": "DiamondDustRecipe",
+      "type": "recipe",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "diamond_dust_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/progressionplus/recipes/diamond_dust_recipe.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],

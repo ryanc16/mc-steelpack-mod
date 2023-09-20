@@ -76,6 +76,6 @@ public class SteelTier implements Steel, Tier {
 	 */
 	@Override
 	public Ingredient getRepairIngredient() {
-		return Ingredient.of(new ItemStack(ProgressionPlusModItems.STEEL_INGOT.get()));
+		return Ingredient.of(ProgressionPlusModItems.STEEL_INGOT.get());
 	}
 }

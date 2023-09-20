@@ -1,5 +1,6 @@
 package com.grouptwosoftworks.progressionplus.tiers;
 
+import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModItems;
 import com.grouptwosoftworks.progressionplus.item.diamondtipped.DiamondTipped;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
@@ -67,12 +68,12 @@ public class DiamondTippedToolTier implements DiamondTipped, Tier {
 
 	/**
 	 * Get the required ingredient used to repair items for a DiamondTippedToolTier item,
-	 * which is currently that of Diamond.
+	 * which is currently that of Diamond Fragment.
 	 *
 	 * @return The ingredient used to repair items in this tier.
 	 */
 	@Override
 	public Ingredient getRepairIngredient() {
-		return Tiers.DIAMOND.getRepairIngredient();
+		return Ingredient.of(ProgressionPlusModItems.DIAMOND_FRAGMENT.get());
 	}
 }

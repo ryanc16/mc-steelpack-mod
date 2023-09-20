@@ -3,12 +3,12 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "steel_ingot",
+    "texture": "diamond_fragment",
     "customModelName": "Normal",
     "customProperties": {},
     "states": [],
-    "name": "Steel Ingot",
-    "rarity": "UNCOMMON",
+    "name": "Diamond Fragment",
+    "rarity": "RARE",
     "creativeTab": {
       "value": "MATERIALS"
     },
@@ -26,7 +26,11 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [],
+    "specialInfo": [
+      "Fractured Diamond",
+      "Used in Repairing",
+      "Maybe More..."
+    ],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,

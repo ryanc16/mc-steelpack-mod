@@ -5,6 +5,8 @@
 package com.grouptwosoftworks.progressionplus.init;
 
 import com.grouptwosoftworks.progressionplus.Constants;
+import com.grouptwosoftworks.progressionplus.item.diamond.DiamondDustItem;
+import com.grouptwosoftworks.progressionplus.item.diamond.DiamondFragmentItem;
 import com.grouptwosoftworks.progressionplus.item.diamondtipped.tools.DiamondTippedTools;
 import com.grouptwosoftworks.progressionplus.item.smithingtemplates.DiamondTippedUpgradeTemplateItem;
 import com.grouptwosoftworks.progressionplus.item.steel.armor.SteelArmor;
@@ -41,6 +43,8 @@ public class ProgressionPlusModItems {
 	public static final RegistryObject<Item> DIAMOND_TIPPED_SHOVEL = REGISTRY.register("diamond_tipped_shovel", () -> DiamondTippedTools.DIAMOND_TIPPED_SHOVEL_ITEM);
 	public static final RegistryObject<Item> DIAMOND_TIPPED_HOE = REGISTRY.register("diamond_tipped_hoe", () -> DiamondTippedTools.DIAMOND_TIPPED_HOE_ITEM);
 	public static final RegistryObject<Item> DIAMOND_TIPPED_UPGRADE_SMITHING_TEMPLATE_ITEM = REGISTRY.register("diamond_tipped_upgrade_smithing_template", () -> new DiamondTippedUpgradeTemplateItem());
+	public static final RegistryObject<Item> DIAMOND_FRAGMENT = REGISTRY.register("diamond_fragment", () -> new DiamondFragmentItem());
+	public static final RegistryObject<Item> DIAMOND_DUST = REGISTRY.register("diamond_dust", () -> new DiamondDustItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

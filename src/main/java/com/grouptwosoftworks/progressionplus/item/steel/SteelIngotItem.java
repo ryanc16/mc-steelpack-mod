@@ -8,6 +8,6 @@ import net.minecraft.world.item.Rarity;
  */
 public class SteelIngotItem extends Item implements SteelItem {
 	public SteelIngotItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON));
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.UNCOMMON));
 	}
 }
