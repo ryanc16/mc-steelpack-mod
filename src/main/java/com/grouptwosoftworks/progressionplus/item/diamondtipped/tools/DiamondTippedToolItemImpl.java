@@ -1,16 +1,21 @@
 package com.grouptwosoftworks.progressionplus.item.diamondtipped.tools;
 
 import com.grouptwosoftworks.progressionplus.item.steel.tools.SteelToolItem;
+import com.grouptwosoftworks.progressionplus.tiers.ToolTiers;
 import com.grouptwosoftworks.progressionplus.utils.ItemUpgradeUtils;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+
+import java.util.List;
 
 /**
  * Includes package protected implementation for all DiamondTippedTools.
  */
 class DiamondTippedToolItemImpl {
 	private final static int STACK_SIZE_OF_ONE = 1;
-	private static final String PREVIOUS_TOOL_DAMAGE = "progressionplus:previous_tool_damage";
+	public static final String PREVIOUS_TOOL_DAMAGE = "progressionplus:previous_tool_damage";
 	protected DiamondTippedToolItemImpl() {}
 
 	/**
@@ -65,5 +70,30 @@ class DiamondTippedToolItemImpl {
 	 */
 	private int getPreviousItemDamage(ItemStack selfItemStack) {
 		return selfItemStack.getOrCreateTag().getInt(PREVIOUS_TOOL_DAMAGE);
+	}
+
+	private String getPreviousTierName() {
+		return "Steel";
+	}
+
+	public List<Component> appendPreviousDamageHoverText(ItemStack itemStack, List<Component> toolTipComponentList) {
+		var hasPreviousToolDamage = itemStack.getOrCreateTag().contains(DiamondTippedToolItemImpl.PREVIOUS_TOOL_DAMAGE);
+
+		if (hasPreviousToolDamage) {
+			var previousItemDamage = itemStack.getOrCreateTag().getInt(DiamondTippedToolItemImpl.PREVIOUS_TOOL_DAMAGE);
+			var previousTierMaxHealth = ToolTiers.STEEL.getUses();
+			var previousItemHealth = ToolTiers.STEEL.getUses() - previousItemDamage;
+
+			var formattedString = String.format(
+					"%s HP: %d/%d",
+					getPreviousTierName(),
+					previousItemHealth,
+					previousTierMaxHealth
+			);
+
+			toolTipComponentList.add(Component.literal(formattedString).withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC));
+		}
+
+		return toolTipComponentList;
 	}
 }

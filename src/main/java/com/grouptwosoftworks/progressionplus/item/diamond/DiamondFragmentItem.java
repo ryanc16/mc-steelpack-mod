@@ -1,5 +1,6 @@
 package com.grouptwosoftworks.progressionplus.item.diamond;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
@@ -11,14 +12,15 @@ import java.util.List;
 
 public class DiamondFragmentItem extends Item {
     public DiamondFragmentItem() {
-        super(new Item.Properties().stacksTo(64).rarity(Rarity.RARE));
+        super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON));
     }
 
     @Override
     public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
-        list.add(Component.translatable("item.steelpack.diamond_fragment.tool_tip_description_0"));
-        list.add(Component.translatable("item.steelpack.diamond_fragment.tool_tip_description_1"));
-        list.add(Component.translatable("item.steelpack.diamond_fragment.tool_tip_description_2"));
+        var translated = Component.translatable("item.progressionplus.diamond_fragment.tool_tip_description").getString();
+        for (String part: translated.split("\n")) {
+            list.add(Component.literal(part).withStyle(ChatFormatting.GRAY));
+        }
 
         super.appendHoverText(itemstack, world, list, flag);
     }
