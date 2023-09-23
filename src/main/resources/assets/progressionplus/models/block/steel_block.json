@@ -1,8 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "progressionplus:block/steel_block_item",
-    "particle": "progressionplus:block/steel_block_item"
-  },
-  "render_type": "solid"
+    "all": "progressionplus:block/steel_block"
+  }
 }

@@ -39,11 +39,9 @@ public class ProgressionPlusMod {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-		ProgressionPlusModBlocks.REGISTRY.register(bus);
-
-		ProgressionPlusModItems.REGISTRY.register(bus);
-
-		ProgressionPlusModTabs.REGISTRY.register(bus);
+		ProgressionPlusModBlocks.BLOCKS_REGISTRY.register(bus);
+		ProgressionPlusModItems.ITEMS_REGISTRY.register(bus);
+		ProgressionPlusModTabs.CREATIVE_TABS_REGISTRY.register(bus);
 	}
 
 	public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
