@@ -1,8 +1,12 @@
+creativetab.mod_items_tab: Prepare to Mine
+
+# Diamond Sub Mod ingredients
 item.progressionplus.diamond_dust: Diamond Dust
 item.progressionplus.diamond_dust.tool_tip_description: Tiny Diamond Pieces
 item.progressionplus.diamond_fragment: Diamond Fragment
 item.progressionplus.diamond_fragment.tool_tip_description: "A Fractured Diamond Used in Repairing\nMaybe More..."
 
+# Diamond Tipped Sub Mod items
 item.progressionplus.diamond_tipped_axe: Diamond Tipped Axe
 item.progressionplus.diamond_tipped_hoe: Diamond Tipped Hoe
 item.progressionplus.diamond_tipped_pickaxe: Diamond Tipped Pickaxe
@@ -15,7 +19,9 @@ item.progressionplus.smithing_template.diamond_tipped_upgrade.additions_slot_des
 item.progressionplus.smithing_template.diamond_tipped_upgrade.ingredients: Diamond
 
 
+# Steel Sub Mod items
 item.progressionplus.steel_ingot: Steel Ingot
+block.progressionplus.steel_block: Block of Steel
 
 item.progressionplus.steel_armor_helmet: Steel Helmet
 item.progressionplus.steel_armor_chestplate: Steel Chestplate
@@ -30,5 +36,3 @@ item.progressionplus.steel_sword: Steel Sword
 
 advancements.progressionplus.steel_advancement.title: Steel or No Steel
 advancements.progressionplus.steel_advancement.descr: Smelt a Steel Ingot
-
-block.progressionplus.steel_block: Block of Steel
