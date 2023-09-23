@@ -2,16 +2,25 @@ package com.grouptwosoftworks.progressionplus.tiers;
 
 import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModItems;
 import com.grouptwosoftworks.progressionplus.item.steel.Steel;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 
 /**
- * The SteelTier specifies the tier values for SteelTools.
+ * The SteelToolTier specifies the tier values for SteelTools.
  * It is currently mostly balanced between that of Iron and Diamond tiers.
  */
-public class SteelTier implements Steel, Tier {
+public class SteelToolTier implements Steel, NamedTier {
+
+	/**
+	 * Uses the resource string to get the Steel tier name.
+	 *
+	 * @return the steel tier name.
+	 */
+	@Override
+	public String getName() {
+		return Component.translatable("tier.progressionplus.steel.name").getString();
+	}
 
 	/**
 	 * Get the maximum number of uses for a SteelToolTier item,

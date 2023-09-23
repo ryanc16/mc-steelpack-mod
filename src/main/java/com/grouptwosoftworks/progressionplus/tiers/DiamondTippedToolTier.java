@@ -2,6 +2,7 @@ package com.grouptwosoftworks.progressionplus.tiers;
 
 import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModItems;
 import com.grouptwosoftworks.progressionplus.item.diamondtipped.DiamondTipped;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -10,7 +11,18 @@ import net.minecraft.world.item.crafting.Ingredient;
  * The DiamondTippedToolTier specifies the tier values for DiamondTippedTools.
  * It is currently a combination between Steel and Diamond tiers.
  */
-public class DiamondTippedToolTier implements DiamondTipped, Tier {
+public class DiamondTippedToolTier implements DiamondTipped, NamedTier {
+
+	/**
+	 * Uses the resource string to get the DiamondTipped tier name.
+	 *
+	 * @return the diamond tipped tier name.
+	 */
+	@Override
+	public String getName() {
+		return Component.translatable("tier.progressionplus.diamond_tipped.name").getString();
+	}
+
 	/**
 	 * Get the maximum number of uses for a DiamondTippedToolTier item,
 	 * which is currently that of Steel.

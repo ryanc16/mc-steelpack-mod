@@ -16,34 +16,26 @@ import java.util.List;
  * The DiamondTippedShovel item. It can be downgraded to the SteelShovel item.
  */
 public class DiamondTippedShovelItem extends ShovelItem implements DiamondTippedToolItem {
-
 	private static final float ATTACK_DAMAGE_BASELINE = 1.5f;
 	private static final float HARVEST_EFFICIENCY_MODIFIER = -3.0f;
-	private final DiamondTippedToolItemImpl impl;
 
 	public DiamondTippedShovelItem() {
 		super(ToolTiers.DIAMOND_TIPPED, ATTACK_DAMAGE_BASELINE, HARVEST_EFFICIENCY_MODIFIER, new Item.Properties());
-		impl = new DiamondTippedToolItemImpl();
+	}
+
+	@Override
+	public void onCraftedBy(ItemStack pickedUpItemStack, Level level, Player player) {
+		onCraftedBy(pickedUpItemStack, player);
 	}
 
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
-		impl.appendPreviousDamageHoverText(itemstack, list);
+		appendPreviousDamageHoverText(itemstack, list);
 		super.appendHoverText(itemstack, world, list, flag);
 	}
 
 	@Override
-	public void onCraftedBy(ItemStack itemStack, Level level, Player player) {
-		impl.onCraftedBy(player, itemStack);
-	}
-
-	@Override
-	public boolean shouldDowngrade(ItemStack selfItemStack) {
-		return impl.shouldDowngrade(selfItemStack);
-	}
-
-	@Override
 	public ItemStack downgrade(ItemStack selfItemStack) {
-		return impl.downgrade(selfItemStack, SteelTools.STEEL_SHOVEL_ITEM);
+		return downgrade(selfItemStack, SteelTools.STEEL_SHOVEL_ITEM);
 	}
 }

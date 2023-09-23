@@ -3,7 +3,7 @@ package com.grouptwosoftworks.progressionplus;
 /**
  * Modpack constants
  */
-public class Constants {
+public final class Constants {
 	private Constants() {}
 
 	public static final String MODID = "progressionplus";

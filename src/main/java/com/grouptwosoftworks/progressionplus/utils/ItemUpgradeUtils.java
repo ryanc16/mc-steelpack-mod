@@ -8,7 +8,7 @@ import net.minecraft.world.item.TieredItem;
 
 import java.util.Optional;
 
-public class ItemUpgradeUtils {
+public final class ItemUpgradeUtils {
 	private ItemUpgradeUtils() {}
 
 	/**

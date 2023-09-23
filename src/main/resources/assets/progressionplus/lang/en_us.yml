@@ -3,6 +3,7 @@ item.progressionplus.diamond_dust.tool_tip_description: Tiny Diamond Pieces
 item.progressionplus.diamond_fragment: Diamond Fragment
 item.progressionplus.diamond_fragment.tool_tip_description: "A Fractured Diamond Used in Repairing\nMaybe More..."
 
+tier.progressionplus.diamond_tipped.name: Diamond Tipped
 item.progressionplus.diamond_tipped_axe: Diamond Tipped Axe
 item.progressionplus.diamond_tipped_hoe: Diamond Tipped Hoe
 item.progressionplus.diamond_tipped_pickaxe: Diamond Tipped Pickaxe
@@ -22,6 +23,7 @@ item.progressionplus.steel_armor_chestplate: Steel Chestplate
 item.progressionplus.steel_armor_leggings: Steel Leggings
 item.progressionplus.steel_armor_boots: Steel Boots
 
+tier.progressionplus.steel.name: Steel
 item.progressionplus.steel_axe: Steel Axe
 item.progressionplus.steel_hoe: Steel Hoe
 item.progressionplus.steel_pickaxe: Steel Pickaxe

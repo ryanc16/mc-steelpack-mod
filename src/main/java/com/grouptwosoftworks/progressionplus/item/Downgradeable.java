@@ -3,7 +3,7 @@ package com.grouptwosoftworks.progressionplus.item;
 import net.minecraft.world.item.ItemStack;
 
 /**
- * An interface to represent a downgradable item
+ * An interface to represent a downgradeable item
  */
 public interface Downgradeable {
 

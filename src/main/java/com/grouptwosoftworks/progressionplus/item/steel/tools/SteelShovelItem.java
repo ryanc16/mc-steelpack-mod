@@ -10,10 +10,8 @@ import net.minecraft.world.item.ShovelItem;
 public class SteelShovelItem extends ShovelItem implements SteelToolItem {
 	private static final float ATTACK_DAMAGE_BASELINE = 1.5f;
 	private static final float HARVEST_EFFICIENCY_MODIFIER = -3.0f;
-	private final SteelToolItemImpl impl;
 
 	public SteelShovelItem() {
 		super(ToolTiers.STEEL, ATTACK_DAMAGE_BASELINE, HARVEST_EFFICIENCY_MODIFIER, new Item.Properties());
-		impl = new SteelToolItemImpl();
 	}
 }
