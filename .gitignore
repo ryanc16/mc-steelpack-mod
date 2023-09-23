@@ -111,13 +111,7 @@ gradle-app.setting
 
 **/build/
 
-# MCreator
-## backups & cache
-.mcreator/workspaceBackups
-.mcreator/generatorGradleCache
-.mcreator/modElementThumbnails
-.classpath
-## minecraft installation directory
+# minecraft run files directory
 run/
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
