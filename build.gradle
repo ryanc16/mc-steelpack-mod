@@ -4,6 +4,7 @@ plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id "com.ascert.open.json2yaml" version "1.1.1"
 }
 
 version = mod_version + "-mc" + minecraft_version
@@ -180,5 +181,20 @@ tasks.named('jar', Jar).configure {
 }
 
 tasks.withType(JavaCompile).configureEach {
+    dependsOn('generateJsonFromYml')
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
+
+
+tasks.register('generateJsonFromYml') {
+    def resourcesDir = "src/main/resources"
+    dependsOn YamlToJson {
+        outDir = file(resourcesDir)
+        // file tree - converted files will use same sub-directory structure as originals
+        sourceFiles = fileTree(dir: resourcesDir, include: "**/*.yml")
+        // Extension mapping (values shown are actually the defaults).
+        yamlExt = ".yml"
+        jsonExt = ".json"
+    }
+}
+
