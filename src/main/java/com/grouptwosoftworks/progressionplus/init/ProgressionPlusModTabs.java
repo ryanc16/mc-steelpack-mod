@@ -14,8 +14,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Consumer;
 
 /**
@@ -24,38 +24,21 @@ import java.util.function.Consumer;
 @Mod.EventBusSubscriber(modid = Constants.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public final class ProgressionPlusModTabs {
 	public ProgressionPlusModTabs() {}
+
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS_REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Constants.MODID);
 
-	public static final Map<ResourceKey<CreativeModeTab>, List<Consumer<BuildCreativeModeTabContentsEvent>>> tabTypeRegistry = Map.of(
-			CreativeModeTabs.BUILDING_BLOCKS, List.of(ProgressionPlusModTabs::acceptSteelBlocks),
-			CreativeModeTabs.COMBAT, List.of(ProgressionPlusModTabs::acceptSteelArmor, ProgressionPlusModTabs::acceptSteelWeapons),
-			CreativeModeTabs.INGREDIENTS, List.of(ProgressionPlusModTabs::acceptSteelIngredients, ProgressionPlusModTabs::acceptDiamondIngredients),
-			CreativeModeTabs.TOOLS_AND_UTILITIES, List.of(ProgressionPlusModTabs::acceptSteelTools, ProgressionPlusModTabs::acceptDiamondTippedTools)
+	public static final Map<ResourceKey<CreativeModeTab>, Set<Consumer<BuildCreativeModeTabContentsEvent>>> tabTypeRegistry = Map.of(
+		CreativeModeTabs.BUILDING_BLOCKS, Set.of(ProgressionPlusModTabs::acceptSteelBlocks),
+		CreativeModeTabs.COMBAT, Set.of(ProgressionPlusModTabs::acceptSteelArmor, ProgressionPlusModTabs::acceptSteelWeapons),
+		CreativeModeTabs.INGREDIENTS, Set.of(ProgressionPlusModTabs::acceptSteelIngredients, ProgressionPlusModTabs::acceptDiamondIngredients),
+		CreativeModeTabs.TOOLS_AND_UTILITIES, Set.of(ProgressionPlusModTabs::acceptSteelTools, ProgressionPlusModTabs::acceptDiamondTippedTools)
 	);
 
-
-	public static final RegistryObject<CreativeModeTab> MOD_ITEMS_TAB = CREATIVE_TABS_REGISTRY.register(
-			"mod_items_tab",
-			() -> CreativeModeTab.builder()
-					.icon(() -> new ItemStack(ProgressionPlusModItems.DIAMOND_TIPPED_UPGRADE_SMITHING_TEMPLATE_ITEM.get()))
-					.title(Component.translatable("creativetab.mod_items_tab"))
-					.displayItems((params, output) -> {
-						// Steel Sub Mod
-						acceptSteelIngredients(output);
-						acceptSteelBlocks(output);
-						acceptSteelTools(output);
-						acceptSteelWeapons(output);
-						acceptSteelArmor(output);
-
-						// Diamond Tipped Sub Mod
-						acceptDiamondIngredients(output);
-						acceptDiamondTippedTools(output);
-					}).build()
-	);
+	public static final RegistryObject<CreativeModeTab> MOD_ITEMS_TAB = CREATIVE_TABS_REGISTRY.register("mod_items_tab", ProgressionPlusModTabs::creativeModeTabBuilder);
 
 	@SubscribeEvent
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
-		tabTypeRegistry.getOrDefault(tabData.getTabKey(), List.of()).forEach(action -> action.accept(tabData));
+		tabTypeRegistry.getOrDefault(tabData.getTabKey(), Set.of()).forEach(action -> action.accept(tabData));
 	}
 
 
@@ -96,6 +79,24 @@ public final class ProgressionPlusModTabs {
 		tabData.accept(ProgressionPlusModItems.DIAMOND_TIPPED_AXE.get());
 		tabData.accept(ProgressionPlusModItems.DIAMOND_TIPPED_SHOVEL.get());
 		tabData.accept(ProgressionPlusModItems.DIAMOND_TIPPED_HOE.get());
+	}
+
+	private static CreativeModeTab creativeModeTabBuilder() {
+		return CreativeModeTab.builder()
+			.icon(() -> new ItemStack(ProgressionPlusModItems.DIAMOND_TIPPED_UPGRADE_SMITHING_TEMPLATE_ITEM.get()))
+			.title(Component.translatable("creativetab.mod_items_tab"))
+			.displayItems((params, output) -> {
+				// Steel Sub Mod
+				acceptSteelIngredients(output);
+				acceptSteelBlocks(output);
+				acceptSteelTools(output);
+				acceptSteelWeapons(output);
+				acceptSteelArmor(output);
+
+				// Diamond Tipped Sub Mod
+				acceptDiamondIngredients(output);
+				acceptDiamondTippedTools(output);
+			}).build();
 	}
 
 }

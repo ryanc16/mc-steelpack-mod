@@ -4,7 +4,7 @@ creativetab.mod_items_tab: Prepare to Mine
 item.progressionplus.diamond_dust: Diamond Dust
 item.progressionplus.diamond_dust.tool_tip_description: Tiny Diamond Pieces
 item.progressionplus.diamond_fragment: Diamond Fragment
-item.progressionplus.diamond_fragment.tool_tip_description: "A Fractured Diamond Used in Repairing\nMaybe More..."
+item.progressionplus.diamond_fragment.tool_tip_description: "A fractured Diamond used in repairing...\n...Maybe more."
 
 # Diamond Tipped Sub Mod items
 tier.progressionplus.diamond_tipped.name: Diamond Tipped
