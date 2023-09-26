@@ -1,11 +1,16 @@
 package com.grouptwosoftworks.progressionplus.item.steel.tools;
 
 import com.grouptwosoftworks.progressionplus.tiers.ToolTiers;
+import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 
 
 /**
@@ -17,6 +22,16 @@ public class SteelAxeItem extends AxeItem implements SteelToolItem {
 
 	public SteelAxeItem() {
 		super(ToolTiers.STEEL, ATTACK_DAMAGE_BASELINE, HARVEST_EFFICIENCY_MODIFIER, new Item.Properties());
+	}
+
+	@Override
+	public boolean mineBlock(ItemStack itemStack, Level level, BlockState blockState, BlockPos position, LivingEntity player) {
+
+		if (player.isCrouching()) {
+			// save some piece of information
+		}
+
+		return super.mineBlock(itemStack, level, blockState, position, player);
 	}
 
 	@Override
@@ -44,6 +59,9 @@ public class SteelAxeItem extends AxeItem implements SteelToolItem {
 		if (level.isClientSide()) {
 			if (player.isCrouching()) {
 				blockState.attack(level, positionClicked, player);
+				 // var event = new PlayerEvent.BreakSpeed(player, blockState, this.speed, positionClicked);
+				 // MinecraftForge.EVENT_BUS.post(event);
+
 				return InteractionResult.SUCCESS;
 			}
 			return super.useOn(context);
@@ -52,12 +70,9 @@ public class SteelAxeItem extends AxeItem implements SteelToolItem {
 		// Server Side
 		if (player.isCrouching()) {
 			// Server Side, Player is using our new custom action
-			// var progress = blockState.getDestroyProgress(player, level, positionClicked);
 			blockState.attack(level, positionClicked, player);
-
-			// var event = new PlayerEvent.BreakSpeed(player, blockState, this.speed, positionClicked);
-			// MinecraftForge.EVENT_BUS.post(event);
-
+			 // var event = new PlayerEvent.BreakSpeed(player, blockState, this.speed, positionClicked);
+			 // MinecraftForge.EVENT_BUS.post(event);
 			return InteractionResult.SUCCESS;
 		}
 

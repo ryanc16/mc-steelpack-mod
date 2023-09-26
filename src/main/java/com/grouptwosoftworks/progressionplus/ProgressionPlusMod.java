@@ -3,6 +3,7 @@ package com.grouptwosoftworks.progressionplus;
 import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModBlocks;
 import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModItems;
 import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModTabs;
+import com.grouptwosoftworks.progressionplus.loot.ProgressionPlusModLootModifiers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -42,6 +43,8 @@ public class ProgressionPlusMod {
 		ProgressionPlusModBlocks.BLOCKS_REGISTRY.register(bus);
 		ProgressionPlusModItems.ITEMS_REGISTRY.register(bus);
 		ProgressionPlusModTabs.CREATIVE_TABS_REGISTRY.register(bus);
+		ProgressionPlusModLootModifiers.LOOT_MODIFIER_SERIALIZERS.register(bus);
+
 	}
 
 	public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
