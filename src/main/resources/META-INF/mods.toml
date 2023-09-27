@@ -35,6 +35,14 @@ authors="${mod_authors}" #optional
 # IMPORTANT NOTE: this is NOT an instruction as to which environments (CLIENT or DEDICATED SERVER) your mod loads on. Your mod should load (and maybe do nothing!) whereever it finds itself.
 #displayTest="MATCH_VERSION" # MATCH_VERSION is the default if nothing is specified (#optional)
 
+[[dependencies.${mod_id}]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="${forge_version_range}" #mandatory
+    ordering="NONE"
+    side="BOTH"
+
 [[dependencies.${mod_id}]]
     modId="minecraft"
     mandatory=true
