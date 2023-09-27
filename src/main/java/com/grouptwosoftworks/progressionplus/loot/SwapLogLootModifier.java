@@ -1,12 +1,12 @@
 package com.grouptwosoftworks.progressionplus.loot;
 
 import com.google.common.base.Suppliers;
+import com.grouptwosoftworks.progressionplus.init.RecipeCache;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
@@ -41,20 +41,14 @@ public class SwapLogLootModifier extends LootModifier {
             }
         }
 
-        var recipeManager = context.getLevel().getRecipeManager();
-        var allCrafting = recipeManager.getAllRecipesFor(RecipeType.CRAFTING);
-        var logRecipes = allCrafting.stream().filter(rec -> rec.getGroup().matches("planks")).toList();
-
         for (int i = 0; i < generatedLoot.size(); i++) {
             var itemStack = generatedLoot.get(i);
             if (itemStack.is(ItemTags.LOGS) == false) continue;
 
-            var match = logRecipes.stream().filter(rec ->
-                rec.getIngredients().stream().anyMatch(ingredient -> ingredient.test(itemStack))
-            ).findFirst();
+            var planks = RecipeCache.getPlanksOfLog(itemStack);
 
-            if (match.isPresent()) {
-                generatedLoot.set(i, match.get().getResultItem(context.getLevel().registryAccess()));
+            if (planks.isPresent()) {
+                generatedLoot.set(i, planks.get());
             }
         }
 
