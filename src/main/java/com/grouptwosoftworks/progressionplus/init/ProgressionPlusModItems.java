@@ -14,6 +14,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.List;
+
 /**
  * Registry and static access reference to registered items
  */
@@ -40,4 +42,10 @@ public final class ProgressionPlusModItems {
 	public static final RegistryObject<Item> DIAMOND_FRAGMENT = ITEMS_REGISTRY.register("diamond_fragment", () -> new DiamondFragmentItem());
 	public static final RegistryObject<Item> DIAMOND_DUST = ITEMS_REGISTRY.register("diamond_dust", () -> new DiamondDustItem());
 
+
+	public static final List<RegistryObject<Item>> SWORDS = List.of(STEEL_SWORD);
+	public static final List<RegistryObject<Item>> AXES = List.of(STEEL_AXE, DIAMOND_TIPPED_AXE);
+	public static final List<RegistryObject<Item>> PICKAXES = List.of(STEEL_PICKAXE, DIAMOND_TIPPED_PICKAXE);
+	public static final List<RegistryObject<Item>> SHOVELS = List.of(STEEL_SHOVEL, DIAMOND_TIPPED_SHOVEL);
+	public static final List<RegistryObject<Item>> HOES = List.of(STEEL_HOE, DIAMOND_TIPPED_HOE);
 }

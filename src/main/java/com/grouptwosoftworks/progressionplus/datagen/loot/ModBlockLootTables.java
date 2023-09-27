@@ -8,15 +8,15 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
 
-public class ProgressionPlusModBlockLootTables extends BlockLootSubProvider {
+public class ModBlockLootTables extends BlockLootSubProvider {
 
-    public ProgressionPlusModBlockLootTables() {
+    public ModBlockLootTables() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
 
     @Override
     protected void generate() {
-
+        this.dropSelf(ProgressionPlusModBlocks.STEEL_BLOCK.get());
     }
 
     @Override

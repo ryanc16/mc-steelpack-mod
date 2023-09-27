@@ -30,6 +30,11 @@ public class SwapLogLootModifier extends LootModifier {
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
 
+        var lootTableId = context.getQueriedLootTableId();
+        if (lootTableId.getPath().matches("blocks/\\w+_log") == false) {
+            return generatedLoot;
+        }
+
         for (LootItemCondition condition: this.conditions) {
             if (!condition.test(context)) {
                 return generatedLoot;
