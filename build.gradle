@@ -162,6 +162,14 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'org.assertj:assertj-core:3.21.0'
+}
+
+test {
+    useJUnitPlatform()
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -171,8 +179,8 @@ dependencies {
 tasks.named('processResources', ProcessResources).configure {
     dependsOn 'generateJsonFromYml'
     var replaceProperties = [
-            minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
-            forge_version: forge_version, forge_version_range: forge_version_range,
+            minecraft_version   : minecraft_version, minecraft_version_range: minecraft_version_range,
+            forge_version       : forge_version, forge_version_range: forge_version_range,
             loader_version_range: loader_version_range,
             mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description,
@@ -219,4 +227,3 @@ tasks.register('generateJsonFromYml') {
         jsonExt = ".json"
     }
 }
-
