@@ -3,6 +3,7 @@ package com.grouptwosoftworks.progressionplus;
 import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModBlocks;
 import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModItems;
 import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModTabs;
+import com.grouptwosoftworks.progressionplus.init.RecipeCache;
 import com.grouptwosoftworks.progressionplus.loot.ProgressionPlusModLootModifiers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.network.FriendlyByteBuf;
@@ -11,6 +12,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.player.PlayerContainerEvent;
+import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -69,6 +71,16 @@ public class ProgressionPlusMod {
 			});
 			actions.forEach(e -> e.getKey().run());
 			workQueue.removeAll(actions);
+		}
+	}
+
+	@SubscribeEvent
+	public void onWorldLoad(LevelEvent.Load event) {
+		var level = event.getLevel();
+
+		if (level.isClientSide() == false) {
+			var recipeManager = level.getServer().getRecipeManager();
+			RecipeCache.calculatePlanksCraftingRecipes(recipeManager, level.registryAccess());
 		}
 	}
 
