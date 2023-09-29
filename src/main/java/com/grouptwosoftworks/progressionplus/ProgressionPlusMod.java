@@ -5,7 +5,7 @@ import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModItems;
 import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModTabs;
 import com.grouptwosoftworks.progressionplus.init.RecipeCache;
 import com.grouptwosoftworks.progressionplus.loot.ProgressionPlusModLootModifiers;
-import com.grouptwosoftworks.progressionplus.utils.RecipeManagerUtils;
+import com.grouptwosoftworks.progressionplus.utils.LogsToPlanksRecipes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -90,7 +90,7 @@ public class ProgressionPlusMod {
 		var context = level.getServer().getServerResources().managers().getConditionContext();
 
 		var oldRecipes = recipeManager.getRecipes().toArray( new Recipe<?>[0] );
-		var newRecipesPlanksUpdated = RecipeManagerUtils.modifyLogsToPlanksRecipes(
+		var newRecipesPlanksUpdated = LogsToPlanksRecipes.getNewRecipes(
 				level,
 				context,
 				oldRecipes
