@@ -1,9 +1,8 @@
 package com.grouptwosoftworks.progressionplus.item.steel.tools;
 
-import com.grouptwosoftworks.progressionplus.item.Upgradeable;
 import com.grouptwosoftworks.progressionplus.item.UpgradeableTool;
 import com.grouptwosoftworks.progressionplus.item.steel.SteelItem;
-import com.grouptwosoftworks.progressionplus.tiers.ToolTiers;
+import com.grouptwosoftworks.progressionplus.tiers.ProgressionPlusTiers;
 import net.minecraft.world.item.Tier;
 
 /**
@@ -18,6 +17,6 @@ public interface SteelToolItem extends SteelItem, UpgradeableTool {
 	 */
 	@Override
 	default Tier getNextTier() {
-		return ToolTiers.DIAMOND_TIPPED;
+		return ProgressionPlusTiers.DIAMOND_TIPPED_TIER;
 	}
 }

@@ -1,6 +1,6 @@
 package com.grouptwosoftworks.progressionplus.item;
 
-import com.grouptwosoftworks.progressionplus.tiers.NamedTier;
+import com.grouptwosoftworks.progressionplus.tiers.ProgressionPlusTiers;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
@@ -13,14 +13,15 @@ public interface DowngradeableTool extends Downgradeable {
 	 */
 	default String getPreviousToolTooltipText(ItemStack itemStack) {
 		int previousItemDamage = itemStack.getOrCreateTag().getInt(ToolItemTags.PREVIOUS_TOOL_DAMAGE);
-		NamedTier previousTier = (NamedTier) getPreviousTier();
-		String previousToolName = previousTier.getName();
+
+		Tier previousTier = getPreviousTier();
+		var previousToolName = ProgressionPlusTiers.TIER_NAME_KEYS.getOrDefault(previousTier, null);
 		int previousTierMaxHealth = previousTier.getUses();
 		int previousItemHealth = previousTier.getUses() - previousItemDamage;
 
 		return String.format(
 			"%s HP: %d/%d",
-			previousToolName,
+			previousToolName.getString(),
 			previousItemHealth,
 			previousTierMaxHealth
 		);

@@ -7,6 +7,7 @@ item.progressionplus.diamond_fragment: Diamond Fragment
 item.progressionplus.diamond_fragment.tool_tip_description: "A fractured Diamond used in repairing...\n...Maybe more."
 
 # Diamond Tipped Sub Mod items
+tier.progressionplus.diamond_tipped: Diamond Tipped
 tier.progressionplus.diamond_tipped.name: Diamond Tipped
 item.progressionplus.diamond_tipped_axe: Diamond Tipped Axe
 item.progressionplus.diamond_tipped_hoe: Diamond Tipped Hoe
@@ -29,7 +30,10 @@ item.progressionplus.steel_armor_chestplate: Steel Chestplate
 item.progressionplus.steel_armor_leggings: Steel Leggings
 item.progressionplus.steel_armor_boots: Steel Boots
 
+tier.progressionplus.steel: Steel
 tier.progressionplus.steel.name: Steel
+tier.progressionplus.steel_weapon: Steel
+tier.progressionplus.steel_weapon.name: Steel
 item.progressionplus.steel_axe: Steel Axe
 item.progressionplus.steel_hoe: Steel Hoe
 item.progressionplus.steel_pickaxe: Steel Pickaxe

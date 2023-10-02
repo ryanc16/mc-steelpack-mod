@@ -1,7 +1,7 @@
 package com.grouptwosoftworks.progressionplus.item.diamondtipped.tools;
 
 import com.grouptwosoftworks.progressionplus.item.steel.tools.SteelTools;
-import com.grouptwosoftworks.progressionplus.tiers.ToolTiers;
+import com.grouptwosoftworks.progressionplus.tiers.ProgressionPlusTiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.HoeItem;
@@ -20,7 +20,7 @@ public class DiamondTippedHoeItem extends HoeItem implements DiamondTippedToolIt
 	private static final float HARVEST_EFFICIENCY_MODIFIER = 0.0f;
 
 	public DiamondTippedHoeItem() {
-		super(ToolTiers.DIAMOND_TIPPED, ATTACK_DAMAGE_BASELINE, HARVEST_EFFICIENCY_MODIFIER, new Item.Properties());
+		super(ProgressionPlusTiers.DIAMOND_TIPPED_TIER, ATTACK_DAMAGE_BASELINE, HARVEST_EFFICIENCY_MODIFIER, new Item.Properties());
 	}
 
 	@Override

@@ -17,6 +17,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         this.dropSelf(ProgressionPlusModBlocks.STEEL_BLOCK.get());
+
+        // adds an ore block that drops with silk touch, or item that drops without
+//        this.add(
+//                ProgressionPlusModBlocks.STEEL_BLOCK.get(),
+//                block -> createOreDrop(
+//                        ProgressionPlusModBlocks.STEEL_BLOCK.get(), // silk touch
+//                        ProgressionPlusModItems.STEEL_INGOT.get() // no silk touch
+//                )
+//        );
     }
 
     @Override
