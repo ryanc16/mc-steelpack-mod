@@ -4,7 +4,6 @@ on:
     types: [closed]
 jobs:
   build-main-branch:
-    if: github.event_name == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code on main
@@ -25,14 +24,12 @@ jobs:
       with:
         arguments: build --no-daemon
 
-  create-artifacts:
-    needs: build-main-branch
-    runs-on: ubuntu-latest
-    steps:
     - name: Create Artifacts directory
       run: mkdir artifacts
+
     - name: Add Artifacts
       run: cp build/libs/*.jar artifacts/
+
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
       with:
