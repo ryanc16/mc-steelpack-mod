@@ -1,0 +1,46 @@
+name: Build the project with github actions
+on:
+  pull_request:
+    types: [opened, synchronize, closed]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code for PR
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+        if: github.event_name == 'opened' || github.event_name == 'synchronize'
+    - name: Checkout code on main
+      uses: actions/checkout@v4
+      with:
+        ref: 'main'
+        if: github.event_name == 'closed' && github.event.pull_request.merged == true
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Validate Gradle wrapper
+      uses: gradle/wrapper-validation-action@ccb4328a959376b642e027874838f60f8e596de3
+
+    - name: Run Gradle tasks
+      uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629
+      with:
+        arguments: build --no-daemon
+
+  create-artifacts:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create Artifacts directory
+      run: mkdir artifacts
+    - name: Add Artifacts
+      run: cp build/libs/*.jar artifacts/
+    - name: Upload Artifacts
+      with:
+        name: generated artifacts
+        path: downloads
+
