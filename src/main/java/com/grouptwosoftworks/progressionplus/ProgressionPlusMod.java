@@ -1,22 +1,17 @@
 package com.grouptwosoftworks.progressionplus;
 
+import com.grouptwosoftworks.progressionplus.eventhandlers.ServerStartedEventHandler;
 import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModBlocks;
 import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModItems;
 import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModTabs;
-import com.grouptwosoftworks.progressionplus.init.RecipeCache;
 import com.grouptwosoftworks.progressionplus.loot.ProgressionPlusModLootModifiers;
-import com.grouptwosoftworks.progressionplus.utils.LogsToPlanksRecipes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeManager;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.player.PlayerContainerEvent;
-import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -26,7 +21,10 @@ import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 import org.slf4j.Logger;
 
-import java.util.*;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
@@ -47,7 +45,7 @@ public class ProgressionPlusMod {
 		ProgressionPlusModItems.ITEMS_REGISTRY.register(bus);
 		ProgressionPlusModTabs.CREATIVE_TABS_REGISTRY.register(bus);
 		ProgressionPlusModLootModifiers.LOOT_MODIFIER_SERIALIZERS.register(bus);
-
+		MinecraftForge.EVENT_BUS.register(new ServerStartedEventHandler());
 	}
 
 	public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
@@ -67,35 +65,13 @@ public class ProgressionPlusMod {
 			List<AbstractMap.SimpleEntry<Runnable, Integer>> actions = new ArrayList<>();
 			workQueue.forEach(work -> {
 				work.setValue(work.getValue() - 1);
-				if (work.getValue() == 0)
+				if (work.getValue() == 0) {
 					actions.add(work);
+				}
 			});
 			actions.forEach(e -> e.getKey().run());
 			workQueue.removeAll(actions);
 		}
-	}
-
-	@SubscribeEvent
-	public void onWorldLoad(LevelEvent.Load event) {
-		var level = event.getLevel();
-
-		if (level.isClientSide() == false) {
-			var recipeManager = level.getServer().getRecipeManager();
-			RecipeCache.calculatePlanksCraftingRecipes(recipeManager, level.registryAccess());
-			replaceLogsToPlanksRecipes(level, recipeManager);
-		}
-	}
-
-	private void replaceLogsToPlanksRecipes(LevelAccessor level, RecipeManager recipeManager) {
-		var context = level.getServer().getServerResources().managers().getConditionContext();
-
-		var oldRecipes = recipeManager.getRecipes().toArray( new Recipe<?>[0] );
-		var newRecipesPlanksUpdated = LogsToPlanksRecipes.getNewRecipes(
-				level,
-				context,
-				oldRecipes
-		);
-		recipeManager.replaceRecipes(Arrays.stream(newRecipesPlanksUpdated).toList());
 	}
 
 	@SubscribeEvent
