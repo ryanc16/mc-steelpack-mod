@@ -1,8 +1,6 @@
-package com.grouptwosoftworks.progressionplus.tiers;
+package com.grouptwosoftworks.progressionplus.init;
 
 import com.grouptwosoftworks.progressionplus.Constants;
-import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModItems;
-import com.grouptwosoftworks.progressionplus.init.ProgressionPlusModTags;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;

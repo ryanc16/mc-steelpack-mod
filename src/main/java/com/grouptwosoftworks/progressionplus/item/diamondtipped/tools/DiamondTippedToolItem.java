@@ -4,7 +4,7 @@ import com.grouptwosoftworks.progressionplus.item.DowngradeableTool;
 import com.grouptwosoftworks.progressionplus.item.ToolItemTags;
 import com.grouptwosoftworks.progressionplus.item.diamondtipped.DiamondTippedItem;
 import com.grouptwosoftworks.progressionplus.item.steel.tools.SteelToolItem;
-import com.grouptwosoftworks.progressionplus.tiers.ProgressionPlusTiers;
+import com.grouptwosoftworks.progressionplus.init.ProgressionPlusTiers;
 import com.grouptwosoftworks.progressionplus.utils.ItemUpgradeUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

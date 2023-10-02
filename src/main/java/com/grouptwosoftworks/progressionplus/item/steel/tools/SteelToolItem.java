@@ -2,7 +2,7 @@ package com.grouptwosoftworks.progressionplus.item.steel.tools;
 
 import com.grouptwosoftworks.progressionplus.item.UpgradeableTool;
 import com.grouptwosoftworks.progressionplus.item.steel.SteelItem;
-import com.grouptwosoftworks.progressionplus.tiers.ProgressionPlusTiers;
+import com.grouptwosoftworks.progressionplus.init.ProgressionPlusTiers;
 import net.minecraft.world.item.Tier;
 
 /**

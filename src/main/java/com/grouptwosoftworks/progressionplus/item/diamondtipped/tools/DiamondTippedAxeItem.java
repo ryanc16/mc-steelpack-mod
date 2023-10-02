@@ -1,7 +1,7 @@
 package com.grouptwosoftworks.progressionplus.item.diamondtipped.tools;
 
 import com.grouptwosoftworks.progressionplus.item.steel.tools.SteelTools;
-import com.grouptwosoftworks.progressionplus.tiers.ProgressionPlusTiers;
+import com.grouptwosoftworks.progressionplus.init.ProgressionPlusTiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
