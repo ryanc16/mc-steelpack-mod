@@ -1,39 +1,73 @@
 package com.grouptwosoftworks.progressionplus.init;
 
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingRecipe;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeType;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 public class RecipeCache {
-    private RecipeCache(){}
-    private static List<CraftingRecipe> PLANKS_CRAFTING_RECIPES_LAST_CALCULATED = List.of();
-    private static Map<String, ItemStack> LOGS_TO_PLANKS_MAP = new HashMap<String, ItemStack>();
+    private RecipeCache() {}
 
-    public static List<CraftingRecipe> getLastCalculatedPlanksCraftingRecipes() {
-        return new ArrayList<CraftingRecipe>(PLANKS_CRAFTING_RECIPES_LAST_CALCULATED);
+    private static final Map<RecipeGrouping<?, ?>, List<Recipe<? extends Container>>> CRAFTING_RECIPES_LAST_CALCULATED = new HashMap<>();
+    private static final Map<String, ItemStack> INGREDIENT_TO_RESULT_MAP = new HashMap<>();
+    private static RecipeManager recipeManager;
+
+    public static <C extends Container, T extends Recipe<C>, R extends RecipeType<T>> List<T> getLastCalculatedRecipes(R type, String group) {
+        var grouping = new RecipeGrouping<>(type, group);
+        return (List<T>) List.copyOf(CRAFTING_RECIPES_LAST_CALCULATED.get(grouping));
     }
 
-    public static Optional<ItemStack> getPlanksOfLog(ItemStack itemStack) {
-        var match = RecipeCache.LOGS_TO_PLANKS_MAP.get(itemStack.getItem().toString());
-        return Optional.of(match);
+    public static List<CraftingRecipe> getLastCalculatedCraftingRecipe(String group) {
+        var grouping = new RecipeGrouping<>(RecipeType.CRAFTING, group);
+        return CRAFTING_RECIPES_LAST_CALCULATED.get(grouping).stream().map(r -> (CraftingRecipe) r).toList();
     }
 
-    public static void calculatePlanksCraftingRecipes(RecipeManager recipeManager, RegistryAccess registryAccess) {
-        var allCrafting = recipeManager.getAllRecipesFor(RecipeType.CRAFTING);
-        PLANKS_CRAFTING_RECIPES_LAST_CALCULATED = allCrafting.stream().filter(rec -> rec.getGroup().matches("planks")).toList();
+    public static Optional<ItemStack> getResultForIngredient(ItemStack ingredient) {
+        if (RecipeCache.INGREDIENT_TO_RESULT_MAP.containsKey(ingredient.getItem().toString())) {
+            ItemStack result = RecipeCache.INGREDIENT_TO_RESULT_MAP.get(ingredient.getItem().toString());
+            return Optional.of(result);
+        } else {
+            return Optional.empty();
+        }
+    }
 
-        LOGS_TO_PLANKS_MAP.clear();
-        for(var recipe: PLANKS_CRAFTING_RECIPES_LAST_CALCULATED) {
-            ItemStack planks = recipe.getResultItem(registryAccess);
+    public static void initialize(MinecraftServer server) {
+        RecipeCache.recipeManager = server.getRecipeManager();
+        List<RecipeGrouping<?, ?>> recipeOutputGroupsToCache = List.of(new RecipeGrouping<>(RecipeType.CRAFTING, "planks"));
+        INGREDIENT_TO_RESULT_MAP.clear();
+        for (RecipeGrouping<?, ?> grouping : recipeOutputGroupsToCache) {
+            initializeRecipesForGroup(grouping, server.registryAccess());
+        }
+    }
 
-            var logsOfWoodType = recipe.getIngredients().get(0).getItems();
-            for (var logOfType: logsOfWoodType) {
-                LOGS_TO_PLANKS_MAP.put(logOfType.getItem().toString(), planks);
+    private static void initializeRecipesForGroup(RecipeGrouping<?, ?> grouping, RegistryAccess registryAccess) {
+        var cachedResult = cacheRecipeForGroup(grouping);
+        INGREDIENT_TO_RESULT_MAP.remove(grouping.group);
+        for (var recipe : cachedResult) {
+            ItemStack resultItem = recipe.getResultItem(registryAccess);
+
+            var inputIngredient = recipe.getIngredients().get(0).getItems();
+            for (var ing : inputIngredient) {
+                INGREDIENT_TO_RESULT_MAP.put(ing.getItem().toString(), resultItem);
             }
         }
     }
+
+    private static List<Recipe<? extends Container>> cacheRecipeForGroup(RecipeGrouping<?, ?> grouping) {
+        var recipesByType = RecipeCache.recipeManager.getAllRecipesFor(grouping.type);
+        var resultRecipes = recipesByType.stream().filter(rec -> rec.getGroup().matches(grouping.group)).toList();
+        CRAFTING_RECIPES_LAST_CALCULATED.put(grouping, (List<Recipe<? extends Container>>) resultRecipes);
+        return (List<Recipe<? extends Container>>) resultRecipes;
+    }
+
+    private record RecipeGrouping<C extends Container, T extends Recipe<C>>(RecipeType<T> type, String group) {}
 }

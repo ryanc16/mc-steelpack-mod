@@ -36,7 +36,7 @@ public class SwapLogLootModifier extends LootModifier {
         }
 
         for (LootItemCondition condition: this.conditions) {
-            if (!condition.test(context)) {
+            if (condition.test(context) == false) {
                 return generatedLoot;
             }
         }
@@ -45,7 +45,7 @@ public class SwapLogLootModifier extends LootModifier {
             var itemStack = generatedLoot.get(i);
             if (itemStack.is(ItemTags.LOGS) == false) continue;
 
-            var planks = RecipeCache.getPlanksOfLog(itemStack);
+            var planks = RecipeCache.getResultForIngredient(itemStack);
 
             if (planks.isPresent()) {
                 generatedLoot.set(i, planks.get());
