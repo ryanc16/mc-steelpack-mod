@@ -33,5 +33,6 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
       with:
+        name: build-artifacts_main-${{ github.event.pull_request.base.sha }}.zip
         path: artifacts/*.jar
         if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
