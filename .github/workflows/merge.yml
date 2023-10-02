@@ -33,5 +33,5 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: generated artifacts
-        path: artifacts
+        path: artifacts/*.jar
+        if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
