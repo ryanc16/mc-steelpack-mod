@@ -23,6 +23,8 @@ public class ProgressionPlusModTags {
 
         public static final TagKey<Block> NEEDS_STEEL_TOOL = tag("needs_steel_tool");
 
+        public static final TagKey<Block> NEEDS_DIAMOND_TOOL = BlockTags.NEEDS_DIAMOND_TOOL;
+
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(Constants.MODID, name));
         }

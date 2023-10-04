@@ -44,11 +44,11 @@ public final class ProgressionPlusTiers {
 	public static final Tier DIAMOND_TIPPED_TIER = TierSortingRegistry.registerTier(
 			new ForgeTier(
 					3, 500, 8f, 3f, 12,
-					ProgressionPlusModTags.Blocks.NEEDS_STEEL_TOOL,
+					ProgressionPlusModTags.Blocks.NEEDS_DIAMOND_TOOL,
 					() -> Ingredient.of(ProgressionPlusModItems.DIAMOND_FRAGMENT.get())
 			),
 			new ResourceLocation(Constants.MODID, "diamond_tipped"),
-			List.of(Tiers.IRON, STEEL_TIER),
+			List.of(Tiers.IRON, STEEL_TIER, Tiers.DIAMOND),
 			List.of(Tiers.NETHERITE)
 	);
 
