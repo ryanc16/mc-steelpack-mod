@@ -23,7 +23,7 @@ jobs:
     - name: Run Gradle tasks
       uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629
       with:
-        arguments: build --no-daemon
+        arguments: runData build --no-daemon
 
     - name: Create Artifacts directory
       run: mkdir artifacts
