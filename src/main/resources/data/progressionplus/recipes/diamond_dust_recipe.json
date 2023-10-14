@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "progressionplus:diamond_fragment"
-  },
-  "result": "progressionplus:diamond_dust"
-}

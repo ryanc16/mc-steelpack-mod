@@ -32,7 +32,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         for (var pair: tagToItemsMap) {
             var tagKey = ForgeRegistries.ITEMS.tags().createTagKey(new ResourceLocation(pair.getFirst()));
             for (var registryItem: pair.getSecond()) {
-                tag(tagKey).add(registryItem.get());
+                this.tag(tagKey).add(registryItem.get());
             }
         }
     }
@@ -42,17 +42,17 @@ public class ModItemTagProvider extends ItemTagsProvider {
         return "Item Tags";
     }
 
-    private List<Pair<String, List<RegistryObject<Item>>>> tagToItemsMap = List.of(
-            Pair.of("minecraft:swords", ProgressionPlusModItems.SWORDS),
-            Pair.of("minecraft:axes", ProgressionPlusModItems.AXES),
-            Pair.of("minecraft:pickaxes", ProgressionPlusModItems.PICKAXES),
-            Pair.of("minecraft:shovels", ProgressionPlusModItems.SHOVELS),
-            Pair.of("minecraft:hoes", ProgressionPlusModItems.HOES),
+    private List<Pair<String, List<RegistryObject<? extends Item>>>> tagToItemsMap = List.of(
+            Pair.of("minecraft:swords", List.copyOf(ProgressionPlusModItems.SWORDS)),
+            Pair.of("minecraft:axes", List.copyOf(ProgressionPlusModItems.AXES)),
+            Pair.of("minecraft:pickaxes", List.copyOf(ProgressionPlusModItems.PICKAXES)),
+            Pair.of("minecraft:shovels", List.copyOf(ProgressionPlusModItems.SHOVELS)),
+            Pair.of("minecraft:hoes", List.copyOf(ProgressionPlusModItems.HOES)),
 
-            Pair.of("progressionplus:swords", ProgressionPlusModItems.SWORDS),
-            Pair.of("progressionplus:axes", ProgressionPlusModItems.AXES),
-            Pair.of("progressionplus:pickaxes", ProgressionPlusModItems.PICKAXES),
-            Pair.of("progressionplus:shovels", ProgressionPlusModItems.SHOVELS),
-            Pair.of("progressionplus:hoes", ProgressionPlusModItems.HOES)
+            Pair.of("progressionplus:swords", List.copyOf(ProgressionPlusModItems.SWORDS)),
+            Pair.of("progressionplus:axes", List.copyOf(ProgressionPlusModItems.AXES)),
+            Pair.of("progressionplus:pickaxes", List.copyOf(ProgressionPlusModItems.PICKAXES)),
+            Pair.of("progressionplus:shovels", List.copyOf(ProgressionPlusModItems.SHOVELS)),
+            Pair.of("progressionplus:hoes", List.copyOf(ProgressionPlusModItems.HOES))
     );
 }
